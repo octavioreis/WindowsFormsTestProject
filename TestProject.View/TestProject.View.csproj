@@ -61,6 +61,12 @@
     <Compile Include="Views\FuelView.Designer.cs">
       <DependentUpon>FuelView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\TankView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\TankView.Designer.cs">
+      <DependentUpon>TankView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainForm.resx">
@@ -73,12 +79,18 @@
     <EmbeddedResource Include="Views\FuelView.resx">
       <DependentUpon>FuelView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\TankView.resx">
+      <DependentUpon>TankView.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

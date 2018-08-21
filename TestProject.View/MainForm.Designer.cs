@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.tlpMenu = new System.Windows.Forms.TableLayoutPanel();
-            this.cbFuels = new System.Windows.Forms.CheckBox();
-            this.cbTanks = new System.Windows.Forms.CheckBox();
-            this.cbNozzles = new System.Windows.Forms.CheckBox();
+            this.chkFuels = new System.Windows.Forms.CheckBox();
+            this.chkTanks = new System.Windows.Forms.CheckBox();
+            this.chkNozzles = new System.Windows.Forms.CheckBox();
             this.tlpMain.SuspendLayout();
             this.tlpMenu.SuspendLayout();
             this.SuspendLayout();
@@ -61,9 +61,9 @@
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpMenu.Controls.Add(this.cbFuels, 2, 0);
-            this.tlpMenu.Controls.Add(this.cbTanks, 1, 0);
-            this.tlpMenu.Controls.Add(this.cbNozzles, 0, 0);
+            this.tlpMenu.Controls.Add(this.chkFuels, 2, 0);
+            this.tlpMenu.Controls.Add(this.chkTanks, 1, 0);
+            this.tlpMenu.Controls.Add(this.chkNozzles, 0, 0);
             this.tlpMenu.Location = new System.Drawing.Point(226, 105);
             this.tlpMenu.Name = "tlpMenu";
             this.tlpMenu.RowCount = 1;
@@ -71,47 +71,47 @@
             this.tlpMenu.Size = new System.Drawing.Size(348, 46);
             this.tlpMenu.TabIndex = 0;
             // 
-            // cbFuels
+            // chkFuels
             // 
-            this.cbFuels.Appearance = System.Windows.Forms.Appearance.Button;
-            this.cbFuels.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGray;
-            this.cbFuels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbFuels.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFuels.Location = new System.Drawing.Point(235, 3);
-            this.cbFuels.Name = "cbFuels";
-            this.cbFuels.Size = new System.Drawing.Size(110, 40);
-            this.cbFuels.TabIndex = 3;
-            this.cbFuels.Text = "Combustíveis";
-            this.cbFuels.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.cbFuels.UseVisualStyleBackColor = true;
+            this.chkFuels.Appearance = System.Windows.Forms.Appearance.Button;
+            this.chkFuels.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGray;
+            this.chkFuels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkFuels.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkFuels.Location = new System.Drawing.Point(235, 3);
+            this.chkFuels.Name = "chkFuels";
+            this.chkFuels.Size = new System.Drawing.Size(110, 40);
+            this.chkFuels.TabIndex = 3;
+            this.chkFuels.Text = "Combustíveis";
+            this.chkFuels.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkFuels.UseVisualStyleBackColor = true;
             // 
-            // cbTanks
+            // chkTanks
             // 
-            this.cbTanks.Appearance = System.Windows.Forms.Appearance.Button;
-            this.cbTanks.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGray;
-            this.cbTanks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbTanks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTanks.Location = new System.Drawing.Point(119, 3);
-            this.cbTanks.Name = "cbTanks";
-            this.cbTanks.Size = new System.Drawing.Size(110, 40);
-            this.cbTanks.TabIndex = 4;
-            this.cbTanks.Text = "Tanques";
-            this.cbTanks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.cbTanks.UseVisualStyleBackColor = true;
+            this.chkTanks.Appearance = System.Windows.Forms.Appearance.Button;
+            this.chkTanks.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGray;
+            this.chkTanks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkTanks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTanks.Location = new System.Drawing.Point(119, 3);
+            this.chkTanks.Name = "chkTanks";
+            this.chkTanks.Size = new System.Drawing.Size(110, 40);
+            this.chkTanks.TabIndex = 4;
+            this.chkTanks.Text = "Tanques";
+            this.chkTanks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkTanks.UseVisualStyleBackColor = true;
             // 
-            // cbNozzles
+            // chkNozzles
             // 
-            this.cbNozzles.Appearance = System.Windows.Forms.Appearance.Button;
-            this.cbNozzles.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGray;
-            this.cbNozzles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbNozzles.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbNozzles.Location = new System.Drawing.Point(3, 3);
-            this.cbNozzles.Name = "cbNozzles";
-            this.cbNozzles.Size = new System.Drawing.Size(110, 40);
-            this.cbNozzles.TabIndex = 5;
-            this.cbNozzles.Text = "Bicos";
-            this.cbNozzles.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.cbNozzles.UseVisualStyleBackColor = true;
+            this.chkNozzles.Appearance = System.Windows.Forms.Appearance.Button;
+            this.chkNozzles.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGray;
+            this.chkNozzles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkNozzles.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkNozzles.Location = new System.Drawing.Point(3, 3);
+            this.chkNozzles.Name = "chkNozzles";
+            this.chkNozzles.Size = new System.Drawing.Size(110, 40);
+            this.chkNozzles.TabIndex = 5;
+            this.chkNozzles.Text = "Bicos";
+            this.chkNozzles.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkNozzles.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -133,8 +133,8 @@
 
         private System.Windows.Forms.TableLayoutPanel tlpMain;
         private System.Windows.Forms.TableLayoutPanel tlpMenu;
-        private System.Windows.Forms.CheckBox cbFuels;
-        private System.Windows.Forms.CheckBox cbTanks;
-        private System.Windows.Forms.CheckBox cbNozzles;
+        private System.Windows.Forms.CheckBox chkFuels;
+        private System.Windows.Forms.CheckBox chkTanks;
+        private System.Windows.Forms.CheckBox chkNozzles;
     }
 }
