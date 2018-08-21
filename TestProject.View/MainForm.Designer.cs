@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.tlpMenu = new System.Windows.Forms.TableLayoutPanel();
-            this.chkFuels = new System.Windows.Forms.CheckBox();
-            this.chkTanks = new System.Windows.Forms.CheckBox();
-            this.chkNozzles = new System.Windows.Forms.CheckBox();
+            this.rbNozzles = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.itemsView1 = new TestProject.View.Views.ItemsView();
             this.tlpMain.SuspendLayout();
             this.tlpMenu.SuspendLayout();
@@ -63,9 +63,9 @@
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpMenu.Controls.Add(this.chkFuels, 2, 0);
-            this.tlpMenu.Controls.Add(this.chkTanks, 1, 0);
-            this.tlpMenu.Controls.Add(this.chkNozzles, 0, 0);
+            this.tlpMenu.Controls.Add(this.rbNozzles, 0, 0);
+            this.tlpMenu.Controls.Add(this.radioButton2, 1, 0);
+            this.tlpMenu.Controls.Add(this.radioButton3, 2, 0);
             this.tlpMenu.Location = new System.Drawing.Point(226, 105);
             this.tlpMenu.Name = "tlpMenu";
             this.tlpMenu.RowCount = 1;
@@ -73,47 +73,44 @@
             this.tlpMenu.Size = new System.Drawing.Size(348, 46);
             this.tlpMenu.TabIndex = 0;
             // 
-            // chkFuels
+            // rbNozzles
             // 
-            this.chkFuels.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkFuels.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGray;
-            this.chkFuels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkFuels.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkFuels.Location = new System.Drawing.Point(235, 3);
-            this.chkFuels.Name = "chkFuels";
-            this.chkFuels.Size = new System.Drawing.Size(110, 40);
-            this.chkFuels.TabIndex = 3;
-            this.chkFuels.Text = "Combustíveis";
-            this.chkFuels.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkFuels.UseVisualStyleBackColor = true;
+            this.rbNozzles.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbNozzles.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbNozzles.Location = new System.Drawing.Point(3, 3);
+            this.rbNozzles.Name = "rbNozzles";
+            this.rbNozzles.Size = new System.Drawing.Size(110, 40);
+            this.rbNozzles.TabIndex = 6;
+            this.rbNozzles.TabStop = true;
+            this.rbNozzles.Text = "Bicos";
+            this.rbNozzles.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbNozzles.UseVisualStyleBackColor = true;
             // 
-            // chkTanks
+            // radioButton2
             // 
-            this.chkTanks.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkTanks.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGray;
-            this.chkTanks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkTanks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkTanks.Location = new System.Drawing.Point(119, 3);
-            this.chkTanks.Name = "chkTanks";
-            this.chkTanks.Size = new System.Drawing.Size(110, 40);
-            this.chkTanks.TabIndex = 4;
-            this.chkTanks.Text = "Tanques";
-            this.chkTanks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkTanks.UseVisualStyleBackColor = true;
+            this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(119, 3);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(110, 40);
+            this.radioButton2.TabIndex = 7;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Tanques";
+            this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // chkNozzles
+            // radioButton3
             // 
-            this.chkNozzles.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkNozzles.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGray;
-            this.chkNozzles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkNozzles.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkNozzles.Location = new System.Drawing.Point(3, 3);
-            this.chkNozzles.Name = "chkNozzles";
-            this.chkNozzles.Size = new System.Drawing.Size(110, 40);
-            this.chkNozzles.TabIndex = 5;
-            this.chkNozzles.Text = "Bicos";
-            this.chkNozzles.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkNozzles.UseVisualStyleBackColor = true;
+            this.radioButton3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Location = new System.Drawing.Point(235, 3);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(110, 40);
+            this.radioButton3.TabIndex = 8;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Combustíveis";
+            this.radioButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // itemsView1
             // 
@@ -143,9 +140,9 @@
 
         private System.Windows.Forms.TableLayoutPanel tlpMain;
         private System.Windows.Forms.TableLayoutPanel tlpMenu;
-        private System.Windows.Forms.CheckBox chkFuels;
-        private System.Windows.Forms.CheckBox chkTanks;
-        private System.Windows.Forms.CheckBox chkNozzles;
         private Views.ItemsView itemsView1;
+        private System.Windows.Forms.RadioButton rbNozzles;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
     }
 }
