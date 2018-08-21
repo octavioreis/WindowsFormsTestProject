@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Windows.Forms;
+using TestProject.View;
 
 namespace TestProject
 {
@@ -7,6 +9,7 @@ namespace TestProject
         [STAThread]
         static void Main()
         {
+            Application.Run(new MainForm());
         }
     }
 }
