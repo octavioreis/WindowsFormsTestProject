@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.tlpMenu = new System.Windows.Forms.TableLayoutPanel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.cbFuels = new System.Windows.Forms.CheckBox();
+            this.cbTanks = new System.Windows.Forms.CheckBox();
+            this.cbNozzles = new System.Windows.Forms.CheckBox();
             this.tlpMain.SuspendLayout();
             this.tlpMenu.SuspendLayout();
             this.SuspendLayout();
@@ -61,9 +61,9 @@
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpMenu.Controls.Add(this.checkBox1, 2, 0);
-            this.tlpMenu.Controls.Add(this.checkBox2, 1, 0);
-            this.tlpMenu.Controls.Add(this.checkBox3, 0, 0);
+            this.tlpMenu.Controls.Add(this.cbFuels, 2, 0);
+            this.tlpMenu.Controls.Add(this.cbTanks, 1, 0);
+            this.tlpMenu.Controls.Add(this.cbNozzles, 0, 0);
             this.tlpMenu.Location = new System.Drawing.Point(226, 105);
             this.tlpMenu.Name = "tlpMenu";
             this.tlpMenu.RowCount = 1;
@@ -71,47 +71,47 @@
             this.tlpMenu.Size = new System.Drawing.Size(348, 46);
             this.tlpMenu.TabIndex = 0;
             // 
-            // checkBox1
+            // cbFuels
             // 
-            this.checkBox1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkBox1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Silver;
-            this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(235, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(110, 40);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Combustíveis";
-            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbFuels.Appearance = System.Windows.Forms.Appearance.Button;
+            this.cbFuels.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGray;
+            this.cbFuels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbFuels.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFuels.Location = new System.Drawing.Point(235, 3);
+            this.cbFuels.Name = "cbFuels";
+            this.cbFuels.Size = new System.Drawing.Size(110, 40);
+            this.cbFuels.TabIndex = 3;
+            this.cbFuels.Text = "Combustíveis";
+            this.cbFuels.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cbFuels.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // cbTanks
             // 
-            this.checkBox2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkBox2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Silver;
-            this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(119, 3);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(110, 40);
-            this.checkBox2.TabIndex = 4;
-            this.checkBox2.Text = "Tanques";
-            this.checkBox2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cbTanks.Appearance = System.Windows.Forms.Appearance.Button;
+            this.cbTanks.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGray;
+            this.cbTanks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTanks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTanks.Location = new System.Drawing.Point(119, 3);
+            this.cbTanks.Name = "cbTanks";
+            this.cbTanks.Size = new System.Drawing.Size(110, 40);
+            this.cbTanks.TabIndex = 4;
+            this.cbTanks.Text = "Tanques";
+            this.cbTanks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cbTanks.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // cbNozzles
             // 
-            this.checkBox3.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkBox3.FlatAppearance.CheckedBackColor = System.Drawing.Color.SteelBlue;
-            this.checkBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(3, 3);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(110, 40);
-            this.checkBox3.TabIndex = 5;
-            this.checkBox3.Text = "Bicos";
-            this.checkBox3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.cbNozzles.Appearance = System.Windows.Forms.Appearance.Button;
+            this.cbNozzles.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGray;
+            this.cbNozzles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbNozzles.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbNozzles.Location = new System.Drawing.Point(3, 3);
+            this.cbNozzles.Name = "cbNozzles";
+            this.cbNozzles.Size = new System.Drawing.Size(110, 40);
+            this.cbNozzles.TabIndex = 5;
+            this.cbNozzles.Text = "Bicos";
+            this.cbNozzles.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cbNozzles.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -133,8 +133,8 @@
 
         private System.Windows.Forms.TableLayoutPanel tlpMain;
         private System.Windows.Forms.TableLayoutPanel tlpMenu;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox cbFuels;
+        private System.Windows.Forms.CheckBox cbTanks;
+        private System.Windows.Forms.CheckBox cbNozzles;
     }
 }
