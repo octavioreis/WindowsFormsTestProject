@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TestProject.View
 {
-    public partial class MainForm : Form
+    public partial class MainView : Form
     {
-        public MainForm()
+        public MainView()
         {
             InitializeComponent();
         }

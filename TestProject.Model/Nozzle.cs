@@ -7,5 +7,7 @@ namespace TestProject.Model
         public Guid Id { get; set; }
 
         public float SeelingPrice { get; set; }
+
+        public Guid TankId { get; set; }
     }
 }
