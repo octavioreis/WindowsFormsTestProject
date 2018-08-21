@@ -61,6 +61,12 @@
     <Compile Include="Views\FuelView.Designer.cs">
       <DependentUpon>FuelView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ItemsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ItemsView.Designer.cs">
+      <DependentUpon>ItemsView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\NozzleView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuelView.resx">
       <DependentUpon>FuelView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ItemsView.resx">
+      <DependentUpon>ItemsView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NozzleView.resx">
       <DependentUpon>NozzleView.cs</DependentUpon>

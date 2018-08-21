@@ -34,6 +34,7 @@
             this.chkFuels = new System.Windows.Forms.CheckBox();
             this.chkTanks = new System.Windows.Forms.CheckBox();
             this.chkNozzles = new System.Windows.Forms.CheckBox();
+            this.itemsView1 = new TestProject.View.Views.ItemsView();
             this.tlpMain.SuspendLayout();
             this.tlpMenu.SuspendLayout();
             this.SuspendLayout();
@@ -43,6 +44,7 @@
             this.tlpMain.ColumnCount = 1;
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.Controls.Add(this.tlpMenu, 0, 1);
+            this.tlpMain.Controls.Add(this.itemsView1, 0, 2);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
@@ -113,6 +115,14 @@
             this.chkNozzles.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkNozzles.UseVisualStyleBackColor = true;
             // 
+            // itemsView1
+            // 
+            this.itemsView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.itemsView1.Location = new System.Drawing.Point(3, 157);
+            this.itemsView1.Name = "itemsView1";
+            this.itemsView1.Size = new System.Drawing.Size(794, 290);
+            this.itemsView1.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,5 +146,6 @@
         private System.Windows.Forms.CheckBox chkFuels;
         private System.Windows.Forms.CheckBox chkTanks;
         private System.Windows.Forms.CheckBox chkNozzles;
+        private Views.ItemsView itemsView1;
     }
 }
