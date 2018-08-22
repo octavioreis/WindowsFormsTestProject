@@ -1,4 +1,4 @@
-﻿using TestProject.Model;
+﻿using TestProject.Model.Enums;
 
 namespace TestProject.Controller.Interfaces
 {

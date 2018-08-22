@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TestProject.Controller.Enums;
-using TestProject.Controller.Interfaces;
+﻿using TestProject.Controller.Interfaces;
 using TestProject.Database;
+using TestProject.Model.Enums;
 
 namespace TestProject.Controller
 {
@@ -29,13 +24,13 @@ namespace TestProject.Controller
             switch (_view.GetSelectedTab())
             {
                 case RegistryType.Fuel:
-                    _itemsController.LoadFuels(_database.GetFuels());
+                    _itemsController.LoadItems(_database.GetFuels());
                     break;
                 case RegistryType.Tank:
-                    _itemsController.LoadTanks(_database.GetTanks());
+                    _itemsController.LoadItems(_database.GetTanks());
                     break;
                 case RegistryType.Nozzle:
-                    _itemsController.LoadNozzles(_database.GetNozzles());
+                    _itemsController.LoadItems(_database.GetNozzles());
                     break;
             }
         }

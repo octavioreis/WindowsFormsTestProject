@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 using TestProject.Controller;
-using TestProject.Controller.Enums;
 using TestProject.Controller.Interfaces;
+using TestProject.Model.Enums;
 
 namespace TestProject.View
 {
@@ -12,6 +12,11 @@ namespace TestProject.View
         public MainView()
         {
             InitializeComponent();
+        }
+
+        public void SetController(MainController controller)
+        {
+            _controller = controller;
         }
 
         public IItemsView GetItemsView()
@@ -29,14 +34,11 @@ namespace TestProject.View
                 return RegistryType.Nozzle;
         }
 
-        public void SetController(MainController controller)
-        {
-            _controller = controller;
-        }
-
         private void selectedTab_Changed(object sender, System.EventArgs e)
         {
-            _controller.LoadSelectedTab();
+            var radioButton = (RadioButton)sender;
+            if (radioButton.Checked)
+                _controller.LoadSelectedTab();
         }
     }
 }

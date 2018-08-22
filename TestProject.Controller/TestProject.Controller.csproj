@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\RegistryType.cs" />
     <Compile Include="FuelController.cs" />
     <Compile Include="Interfaces\IFuelView.cs" />
     <Compile Include="Interfaces\IItemsView.cs" />

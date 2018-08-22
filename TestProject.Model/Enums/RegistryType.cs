@@ -1,4 +1,4 @@
-﻿namespace TestProject.Controller.Enums
+﻿namespace TestProject.Model.Enums
 {
     public enum RegistryType
     {

@@ -1,4 +1,4 @@
-﻿namespace TestProject.Model
+﻿namespace TestProject.Model.Enums
 {
     public enum FuelType
     {

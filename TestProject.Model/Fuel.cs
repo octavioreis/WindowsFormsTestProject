@@ -1,18 +1,9 @@
-﻿using System;
+﻿using TestProject.Model.Enums;
 
 namespace TestProject.Model
 {
-    public class Fuel
+    public class Fuel : IdentifiedRegistry
     {
-        public Guid Id { get; set; }
-
-        public string Name { get; set; }
-
         public FuelType Type { get; set; }
-
-        public override string ToString()
-        {
-            return Name;
-        }
     }
 }

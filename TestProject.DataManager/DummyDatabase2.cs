@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TestProject.Model;
+using TestProject.Model.Enums;
 
 namespace TestProject.Database
 {

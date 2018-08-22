@@ -11,24 +11,19 @@ namespace TestProject.View.Views
             InitializeComponent();
         }
 
-        public void AddFuel(Fuel fuel)
+        public void AddItem(IdentifiedRegistry item)
         {
-            lbItems.Items.Add(fuel);
-        }
-
-        public void AddNozzle(Nozzle nozzle)
-        {
-            lbItems.Items.Add(nozzle);
-        }
-
-        public void AddTank(Tank tank)
-        {
-            lbItems.Items.Add(tank);
+            lbItems.Items.Add(item);
         }
 
         public void ClearList()
         {
             lbItems.Items.Clear();
+        }
+
+        public void SelectItem(IdentifiedRegistry item)
+        {
+            lbItems.SelectedItem = item;
         }
     }
 }

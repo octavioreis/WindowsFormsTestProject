@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TestProject.Controller.Interfaces;
 using TestProject.Model;
 
@@ -17,22 +14,14 @@ namespace TestProject.Controller
             _view = view;
         }
 
-        public void LoadFuels(IEnumerable<Fuel> fuels)
+        public void LoadItems(IEnumerable<IdentifiedRegistry> items)
         {
-            foreach (var fuel in fuels)
-                _view.AddFuel(fuel);
-        }
+            _view.ClearList();
 
-        public void LoadTanks(IEnumerable<Tank> tanks)
-        {
-            foreach (var tank in tanks)
-                _view.AddTank(tank);
-        }
+            foreach (var item in items)
+                _view.AddItem(item);
 
-        public void LoadNozzles(IEnumerable<Nozzle> nozzles)
-        {
-            foreach (var nozzle in nozzles)
-                _view.AddNozzle(nozzle);
+            _view.SelectItem(items.FirstOrDefault());
         }
     }
 }
