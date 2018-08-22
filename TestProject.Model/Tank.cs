@@ -6,8 +6,15 @@ namespace TestProject.Model
     {
         public Guid Id { get; set; }
 
-        public float StorageCapacity { get; set; }
+        public string Name { get; set; }
+
+        public string StorageCapacity { get; set; }
 
         public Guid FuelId { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

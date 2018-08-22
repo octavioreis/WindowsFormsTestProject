@@ -6,8 +6,15 @@ namespace TestProject.Model
     {
         public Guid Id { get; set; }
 
-        public float SeelingPrice { get; set; }
+        public string Name { get; set; }
+
+        public string SellingPrice { get; set; }
 
         public Guid TankId { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

@@ -41,11 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\RegistryType.cs" />
     <Compile Include="FuelController.cs" />
     <Compile Include="Interfaces\IFuelView.cs" />
+    <Compile Include="Interfaces\IItemsView.cs" />
+    <Compile Include="Interfaces\IMainView.cs" />
+    <Compile Include="ItemsController.cs" />
+    <Compile Include="MainController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TestProject.DataManager\TestProject.Database.csproj">
+      <Project>{9F59627A-7F53-4E09-8EE8-7B9B84627F38}</Project>
+      <Name>TestProject.Database</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestProject.Model\TestProject.Model.csproj">
       <Project>{E5FDEB97-5E6A-4362-B197-553F99FDCC5C}</Project>
       <Name>TestProject.Model</Name>

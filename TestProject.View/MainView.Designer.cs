@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.tlpMenu = new System.Windows.Forms.TableLayoutPanel();
+            this.rbFuels = new System.Windows.Forms.RadioButton();
+            this.rbTanks = new System.Windows.Forms.RadioButton();
             this.rbNozzles = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.itemsView1 = new TestProject.View.Views.ItemsView();
+            this.itemsView = new TestProject.View.Views.ItemsView();
             this.tlpMain.SuspendLayout();
             this.tlpMenu.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +44,7 @@
             this.tlpMain.ColumnCount = 1;
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.Controls.Add(this.tlpMenu, 0, 1);
-            this.tlpMain.Controls.Add(this.itemsView1, 0, 2);
+            this.tlpMain.Controls.Add(this.itemsView, 0, 2);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
@@ -63,9 +63,9 @@
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpMenu.Controls.Add(this.rbNozzles, 0, 0);
-            this.tlpMenu.Controls.Add(this.radioButton2, 1, 0);
-            this.tlpMenu.Controls.Add(this.radioButton3, 2, 0);
+            this.tlpMenu.Controls.Add(this.rbFuels, 0, 0);
+            this.tlpMenu.Controls.Add(this.rbTanks, 1, 0);
+            this.tlpMenu.Controls.Add(this.rbNozzles, 2, 0);
             this.tlpMenu.Location = new System.Drawing.Point(226, 105);
             this.tlpMenu.Name = "tlpMenu";
             this.tlpMenu.RowCount = 1;
@@ -73,61 +73,64 @@
             this.tlpMenu.Size = new System.Drawing.Size(348, 46);
             this.tlpMenu.TabIndex = 0;
             // 
+            // rbFuels
+            // 
+            this.rbFuels.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbFuels.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbFuels.Location = new System.Drawing.Point(3, 3);
+            this.rbFuels.Name = "rbFuels";
+            this.rbFuels.Size = new System.Drawing.Size(110, 40);
+            this.rbFuels.TabIndex = 6;
+            this.rbFuels.TabStop = true;
+            this.rbFuels.Text = "Combustíveis";
+            this.rbFuels.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbFuels.UseVisualStyleBackColor = true;
+            this.rbFuels.CheckedChanged += new System.EventHandler(this.selectedTab_Changed);
+            // 
+            // rbTanks
+            // 
+            this.rbTanks.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbTanks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbTanks.Location = new System.Drawing.Point(119, 3);
+            this.rbTanks.Name = "rbTanks";
+            this.rbTanks.Size = new System.Drawing.Size(110, 40);
+            this.rbTanks.TabIndex = 7;
+            this.rbTanks.TabStop = true;
+            this.rbTanks.Text = "Tanques";
+            this.rbTanks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbTanks.UseVisualStyleBackColor = true;
+            this.rbTanks.CheckedChanged += new System.EventHandler(this.selectedTab_Changed);
+            // 
             // rbNozzles
             // 
             this.rbNozzles.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbNozzles.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbNozzles.Location = new System.Drawing.Point(3, 3);
+            this.rbNozzles.Location = new System.Drawing.Point(235, 3);
             this.rbNozzles.Name = "rbNozzles";
             this.rbNozzles.Size = new System.Drawing.Size(110, 40);
-            this.rbNozzles.TabIndex = 6;
+            this.rbNozzles.TabIndex = 8;
             this.rbNozzles.TabStop = true;
             this.rbNozzles.Text = "Bicos";
             this.rbNozzles.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbNozzles.UseVisualStyleBackColor = true;
+            this.rbNozzles.CheckedChanged += new System.EventHandler(this.selectedTab_Changed);
             // 
-            // radioButton2
+            // itemsView
             // 
-            this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(119, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(110, 40);
-            this.radioButton2.TabIndex = 7;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Tanques";
-            this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.itemsView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.itemsView.Location = new System.Drawing.Point(3, 157);
+            this.itemsView.Name = "itemsView";
+            this.itemsView.Size = new System.Drawing.Size(794, 290);
+            this.itemsView.TabIndex = 1;
             // 
-            // radioButton3
-            // 
-            this.radioButton3.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(235, 3);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(110, 40);
-            this.radioButton3.TabIndex = 8;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Combustíveis";
-            this.radioButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // itemsView1
-            // 
-            this.itemsView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.itemsView1.Location = new System.Drawing.Point(3, 157);
-            this.itemsView1.Name = "itemsView1";
-            this.itemsView1.Size = new System.Drawing.Size(794, 290);
-            this.itemsView1.TabIndex = 1;
-            // 
-            // MainForm
+            // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tlpMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MainForm";
+            this.Name = "MainView";
             this.Text = "Databoff - Projeto teste";
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();
@@ -140,9 +143,9 @@
 
         private System.Windows.Forms.TableLayoutPanel tlpMain;
         private System.Windows.Forms.TableLayoutPanel tlpMenu;
-        private Views.ItemsView itemsView1;
+        private Views.ItemsView itemsView;
         private System.Windows.Forms.RadioButton rbNozzles;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rbTanks;
+        private System.Windows.Forms.RadioButton rbFuels;
     }
 }

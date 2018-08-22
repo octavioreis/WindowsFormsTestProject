@@ -7,8 +7,8 @@
     <ProjectGuid>{9F59627A-7F53-4E09-8EE8-7B9B84627F38}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestProject.DataManager</RootNamespace>
-    <AssemblyName>TestProject.DataManager</AssemblyName>
+    <RootNamespace>TestProject.Database</RootNamespace>
+    <AssemblyName>TestProject.Database</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,9 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractDummyDatabase.cs" />
     <Compile Include="DummyDatabase1.cs" />
     <Compile Include="DummyDatabase2.cs" />
-    <Compile Include="IDataBase.cs" />
+    <Compile Include="IDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

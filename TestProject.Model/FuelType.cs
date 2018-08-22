@@ -3,6 +3,8 @@
     public enum FuelType
     {
         CommonGasoline,
-        AdditivatedGasoline
+        AdditivatedGasoline,
+        Etanol,
+        Diesel
     }
 }

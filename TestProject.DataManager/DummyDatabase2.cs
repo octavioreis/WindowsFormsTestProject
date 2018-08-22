@@ -1,57 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TestProject.Model;
 
-namespace TestProject.DataManager
+namespace TestProject.Database
 {
-    public class DummyDatabase2 : IDataBase
+    public class DummyDatabase2 : AbstractDummyDatabase
     {
-        public void AddFuel(Fuel fuel)
+        protected override List<Fuel> CreateFuelsList()
         {
-            throw new NotImplementedException();
+            return new List<Fuel>()
+            {
+                new Fuel() { Id = Guid.NewGuid(), Name = "Combustivel.1", Type = FuelType.CommonGasoline },
+                new Fuel() { Id = Guid.NewGuid(), Name = "Combustivel.2", Type = FuelType.AdditivatedGasoline }
+            };
         }
 
-        public void AddNozzle(Nozzle nozzle)
+        protected override List<Tank> CreateTanksList(List<Fuel> fuels)
         {
-            throw new NotImplementedException();
+            return new List<Tank>()
+            {
+                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.1", StorageCapacity = "20", FuelId = fuels[0].Id },
+                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.2", StorageCapacity = "25.5", FuelId = fuels[1].Id }
+            };
         }
 
-        public void AddTank(Tank tank)
+        protected override List<Nozzle> CreateNozzlesList(List<Tank> tanks)
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Fuel> GetFuels()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Nozzle> GetNozzles()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Tank> GetTanks()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveFuel(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveNozzle(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveTank(Guid id)
-        {
-            throw new NotImplementedException();
+            return new List<Nozzle>()
+            {
+                new Nozzle() { Id = Guid.NewGuid(), Name = "Bico.1", SellingPrice = "4.05", TankId = tanks[0].Id },
+                new Nozzle() { Id = Guid.NewGuid(), Name = "Bico.2", SellingPrice = "4.20", TankId = tanks[1].Id }
+            };
         }
     }
 }

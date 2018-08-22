@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
+using TestProject.Controller;
+using TestProject.Database;
 using TestProject.View;
 
 namespace TestProject
@@ -9,7 +10,11 @@ namespace TestProject
         [STAThread]
         static void Main()
         {
-            Application.Run(new MainView());
+            var mainView = new MainView();
+            var database = new DummyDatabase1();
+            new MainController(mainView, database);
+
+            mainView.ShowDialog();
         }
     }
 }

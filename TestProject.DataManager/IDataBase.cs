@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using TestProject.Model;
 
-namespace TestProject.DataManager
+namespace TestProject.Database
 {
-    public interface IDataBase
+    public interface IDatabase
     {
         IEnumerable<Fuel> GetFuels();
         IEnumerable<Tank> GetTanks();
