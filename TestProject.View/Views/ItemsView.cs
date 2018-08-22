@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using TestProject.Controller;
 using TestProject.Controller.Interfaces;
 using TestProject.Model;
 
@@ -6,9 +7,16 @@ namespace TestProject.View.Views
 {
     public partial class ItemsView : UserControl, IItemsView
     {
+        private ItemsController _controller;
+
         public ItemsView()
         {
             InitializeComponent();
+        }
+
+        public void SetController(ItemsController controller)
+        {
+            _controller = controller;
         }
 
         public void AddItem(IdentifiedRegistry item)
@@ -21,24 +29,19 @@ namespace TestProject.View.Views
             lbItems.Items.Clear();
         }
 
+        public IFuelView GetFuelView()
+        {
+            return fuelView1;
+        }
+
         public void SelectItem(IdentifiedRegistry item)
         {
             lbItems.SelectedItem = item;
         }
 
-        public void ShowFuelRegistry()
+        private void lbItems_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public void ShowNozzleRegistry()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void ShowTankRegistry()
-        {
-            throw new System.NotImplementedException();
+            _controller.SelectedItemChanged(lbItems.SelectedItem as IdentifiedRegistry);
         }
     }
 }

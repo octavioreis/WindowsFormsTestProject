@@ -30,7 +30,12 @@
         {
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.lbItems = new System.Windows.Forms.ListBox();
+            this.tlpRegistries = new System.Windows.Forms.TableLayoutPanel();
+            this.fuelView1 = new TestProject.View.Views.FuelView();
+            this.nozzleView1 = new TestProject.View.Views.NozzleView();
+            this.tankView1 = new TestProject.View.Views.TankView();
             this.tlpMain.SuspendLayout();
+            this.tlpRegistries.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -39,12 +44,13 @@
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.83333F));
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.16666F));
             this.tlpMain.Controls.Add(this.lbItems, 0, 0);
+            this.tlpMain.Controls.Add(this.tlpRegistries, 1, 0);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 1;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMain.Size = new System.Drawing.Size(600, 300);
+            this.tlpMain.Size = new System.Drawing.Size(718, 532);
             this.tlpMain.TabIndex = 0;
             // 
             // lbItems
@@ -53,8 +59,54 @@
             this.lbItems.FormattingEnabled = true;
             this.lbItems.Location = new System.Drawing.Point(3, 3);
             this.lbItems.Name = "lbItems";
-            this.lbItems.Size = new System.Drawing.Size(155, 294);
+            this.lbItems.Size = new System.Drawing.Size(186, 526);
             this.lbItems.TabIndex = 0;
+            this.lbItems.SelectedIndexChanged += new System.EventHandler(this.lbItems_SelectedIndexChanged);
+            // 
+            // tlpRegistries
+            // 
+            this.tlpRegistries.ColumnCount = 1;
+            this.tlpRegistries.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpRegistries.Controls.Add(this.fuelView1, 0, 0);
+            this.tlpRegistries.Controls.Add(this.nozzleView1, 0, 2);
+            this.tlpRegistries.Controls.Add(this.tankView1, 0, 1);
+            this.tlpRegistries.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRegistries.Location = new System.Drawing.Point(195, 3);
+            this.tlpRegistries.Name = "tlpRegistries";
+            this.tlpRegistries.RowCount = 3;
+            this.tlpRegistries.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpRegistries.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpRegistries.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpRegistries.Size = new System.Drawing.Size(520, 526);
+            this.tlpRegistries.TabIndex = 1;
+            // 
+            // fuelView1
+            // 
+            this.fuelView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fuelView1.FuelName = "";
+            this.fuelView1.Location = new System.Drawing.Point(3, 3);
+            this.fuelView1.Name = "fuelView1";
+            this.fuelView1.Size = new System.Drawing.Size(514, 150);
+            this.fuelView1.TabIndex = 0;
+            this.fuelView1.Visible = false;
+            // 
+            // nozzleView1
+            // 
+            this.nozzleView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nozzleView1.Location = new System.Drawing.Point(3, 315);
+            this.nozzleView1.Name = "nozzleView1";
+            this.nozzleView1.Size = new System.Drawing.Size(514, 208);
+            this.nozzleView1.TabIndex = 1;
+            this.nozzleView1.Visible = false;
+            // 
+            // tankView1
+            // 
+            this.tankView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tankView1.Location = new System.Drawing.Point(3, 159);
+            this.tankView1.Name = "tankView1";
+            this.tankView1.Size = new System.Drawing.Size(514, 150);
+            this.tankView1.TabIndex = 2;
+            this.tankView1.Visible = false;
             // 
             // ItemsView
             // 
@@ -62,8 +114,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tlpMain);
             this.Name = "ItemsView";
-            this.Size = new System.Drawing.Size(600, 300);
+            this.Size = new System.Drawing.Size(718, 532);
             this.tlpMain.ResumeLayout(false);
+            this.tlpRegistries.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -72,5 +125,9 @@
 
         private System.Windows.Forms.TableLayoutPanel tlpMain;
         private System.Windows.Forms.ListBox lbItems;
+        private System.Windows.Forms.TableLayoutPanel tlpRegistries;
+        private FuelView fuelView1;
+        private NozzleView nozzleView1;
+        private TankView tankView1;
     }
 }

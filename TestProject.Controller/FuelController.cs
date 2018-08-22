@@ -11,13 +11,18 @@ namespace TestProject.Controller
 
         public FuelController(IFuelView view)
         {
-            _view = view ?? throw new ArgumentNullException(nameof(view));
+            _view = view;
         }
 
         public void SetFuel(Fuel fuel)
         {
             _fuel = fuel;
             UpdateView();
+        }
+
+        public void SetViewVisibility(bool visibility)
+        {
+            _view.SetViewVisibility(visibility);
         }
 
         public void UpdateModel()

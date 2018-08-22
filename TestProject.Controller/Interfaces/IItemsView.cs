@@ -8,8 +8,8 @@ namespace TestProject.Controller.Interfaces
         void ClearList();
         void SelectItem(IdentifiedRegistry item);
 
-        void ShowFuelRegistry();
-        void ShowTankRegistry();
-        void ShowNozzleRegistry();
+        IFuelView GetFuelView();
+
+        void SetController(ItemsController controller);
     }
 }

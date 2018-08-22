@@ -7,6 +7,8 @@ namespace TestProject.Controller.Interfaces
         string FuelName { get; set; }
         FuelType FuelType { get; set; }
 
+        void SetViewVisibility(bool visible);
+
         void SetController(FuelController controller);
     }
 }

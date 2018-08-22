@@ -12,10 +12,10 @@ namespace TestProject.Controller
 
         public MainController(IMainView view, IDatabase database)
         {
-            _view = view;
-            _database = database;
             view.SetController(this);
 
+            _view = view;
+            _database = database;
             _itemsController = new ItemsController(view.GetItemsView());
         }
 
@@ -24,13 +24,13 @@ namespace TestProject.Controller
             switch (_view.GetSelectedTab())
             {
                 case RegistryType.Fuel:
-                    _itemsController.LoadFuels(_database.GetFuels());
+                    _itemsController.LoadItems(_database.GetFuels());
                     break;
                 case RegistryType.Tank:
-                    _itemsController.LoadTanks(_database.GetTanks());
+                    _itemsController.LoadItems(_database.GetTanks());
                     break;
                 case RegistryType.Nozzle:
-                    _itemsController.LoadNozzles(_database.GetNozzles());
+                    _itemsController.LoadItems(_database.GetNozzles());
                     break;
             }
         }

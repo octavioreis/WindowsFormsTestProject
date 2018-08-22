@@ -47,6 +47,7 @@
     <Compile Include="Interfaces\IMainView.cs" />
     <Compile Include="ItemsController.cs" />
     <Compile Include="MainController.cs" />
+    <Compile Include="ModelWrappers\FuelTypeObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
