@@ -24,13 +24,13 @@ namespace TestProject.Controller
             switch (_view.GetSelectedTab())
             {
                 case RegistryType.Fuel:
-                    _itemsController.LoadItems(_database.GetFuels());
+                    _itemsController.LoadFuels(_database.GetFuels());
                     break;
                 case RegistryType.Tank:
-                    _itemsController.LoadItems(_database.GetTanks());
+                    _itemsController.LoadTanks(_database.GetTanks());
                     break;
                 case RegistryType.Nozzle:
-                    _itemsController.LoadItems(_database.GetNozzles());
+                    _itemsController.LoadNozzles(_database.GetNozzles());
                     break;
             }
         }

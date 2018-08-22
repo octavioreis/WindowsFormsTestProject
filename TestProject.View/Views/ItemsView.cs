@@ -25,5 +25,20 @@ namespace TestProject.View.Views
         {
             lbItems.SelectedItem = item;
         }
+
+        public void ShowFuelRegistry()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void ShowNozzleRegistry()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void ShowTankRegistry()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

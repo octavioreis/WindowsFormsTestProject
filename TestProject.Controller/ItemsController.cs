@@ -2,6 +2,7 @@
 using System.Linq;
 using TestProject.Controller.Interfaces;
 using TestProject.Model;
+using TestProject.Model.Enums;
 
 namespace TestProject.Controller
 {
@@ -14,7 +15,28 @@ namespace TestProject.Controller
             _view = view;
         }
 
-        public void LoadItems(IEnumerable<IdentifiedRegistry> items)
+        public void LoadFuels(IEnumerable<Fuel> fuels)
+        {
+            _view.ShowFuelRegistry();
+
+            LoadItems(fuels);
+        }
+
+        public void LoadTanks(IEnumerable<Tank> tanks)
+        {
+            _view.ShowTankRegistry();
+
+            LoadItems(tanks);
+        }
+
+        public void LoadNozzles(IEnumerable<Nozzle> nozzles)
+        {
+            _view.ShowNozzleRegistry();
+
+            LoadItems(nozzles);
+        }
+
+        private void LoadItems(IEnumerable<IdentifiedRegistry> items)
         {
             _view.ClearList();
 

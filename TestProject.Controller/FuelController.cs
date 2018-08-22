@@ -7,12 +7,17 @@ namespace TestProject.Controller
     public class FuelController
     {
         private readonly IFuelView _view;
-        private readonly Fuel _fuel;
+        private Fuel _fuel;
 
-        public FuelController(IFuelView view, Fuel fuel)
+        public FuelController(IFuelView view)
         {
             _view = view ?? throw new ArgumentNullException(nameof(view));
-            _fuel = fuel ?? throw new ArgumentNullException(nameof(fuel));
+        }
+
+        public void SetFuel(Fuel fuel)
+        {
+            _fuel = fuel;
+            UpdateView();
         }
 
         public void UpdateModel()

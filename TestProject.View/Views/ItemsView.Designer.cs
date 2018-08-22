@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.lbItems = new System.Windows.Forms.ListBox();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tlpMain.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tlpMain
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.83333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.16666F));
-            this.tableLayoutPanel1.Controls.Add(this.lbItems, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 300);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tlpMain.ColumnCount = 2;
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.83333F));
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.16666F));
+            this.tlpMain.Controls.Add(this.lbItems, 0, 0);
+            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMain.Location = new System.Drawing.Point(0, 0);
+            this.tlpMain.Name = "tlpMain";
+            this.tlpMain.RowCount = 1;
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMain.Size = new System.Drawing.Size(600, 300);
+            this.tlpMain.TabIndex = 0;
             // 
             // lbItems
             // 
@@ -56,21 +56,21 @@
             this.lbItems.Size = new System.Drawing.Size(155, 294);
             this.lbItems.TabIndex = 0;
             // 
-            // ListView
+            // ItemsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "ListView";
+            this.Controls.Add(this.tlpMain);
+            this.Name = "ItemsView";
             this.Size = new System.Drawing.Size(600, 300);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tlpMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tlpMain;
         private System.Windows.Forms.ListBox lbItems;
     }
 }
