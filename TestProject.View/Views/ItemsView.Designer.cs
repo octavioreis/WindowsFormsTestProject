@@ -95,17 +95,23 @@
             this.nozzleView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nozzleView1.Location = new System.Drawing.Point(3, 315);
             this.nozzleView1.Name = "nozzleView1";
+            this.nozzleView1.NozzleName = "";
+            this.nozzleView1.SellingPrice = "";
             this.nozzleView1.Size = new System.Drawing.Size(514, 208);
             this.nozzleView1.TabIndex = 1;
+            this.nozzleView1.Tank = null;
             this.nozzleView1.Visible = false;
             // 
             // tankView1
             // 
             this.tankView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tankView1.Fuel = null;
             this.tankView1.Location = new System.Drawing.Point(3, 159);
             this.tankView1.Name = "tankView1";
             this.tankView1.Size = new System.Drawing.Size(514, 150);
+            this.tankView1.StorageCapacity = "";
             this.tankView1.TabIndex = 2;
+            this.tankView1.TankName = "";
             this.tankView1.Visible = false;
             // 
             // ItemsView

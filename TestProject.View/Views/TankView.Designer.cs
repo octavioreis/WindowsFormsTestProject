@@ -92,7 +92,7 @@
             this.txtCapacity.Location = new System.Drawing.Point(75, 29);
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(184, 20);
-            this.txtCapacity.TabIndex = 2;
+            this.txtCapacity.TabIndex = 1;
             // 
             // cbFuel
             // 
@@ -101,7 +101,7 @@
             this.cbFuel.Location = new System.Drawing.Point(75, 58);
             this.cbFuel.Name = "cbFuel";
             this.cbFuel.Size = new System.Drawing.Size(184, 21);
-            this.cbFuel.TabIndex = 3;
+            this.cbFuel.TabIndex = 2;
             // 
             // btnGoToFuel
             // 
@@ -110,7 +110,7 @@
             this.btnGoToFuel.Location = new System.Drawing.Point(265, 55);
             this.btnGoToFuel.Name = "btnGoToFuel";
             this.btnGoToFuel.Size = new System.Drawing.Size(32, 28);
-            this.btnGoToFuel.TabIndex = 4;
+            this.btnGoToFuel.TabIndex = 3;
             this.btnGoToFuel.UseVisualStyleBackColor = true;
             this.btnGoToFuel.Click += new System.EventHandler(this.btnGoToFuel_Click);
             // 
@@ -130,7 +130,7 @@
             this.txtName.Location = new System.Drawing.Point(75, 3);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(184, 20);
-            this.txtName.TabIndex = 6;
+            this.txtName.TabIndex = 0;
             // 
             // btnSave
             // 
@@ -139,7 +139,7 @@
             this.btnSave.Location = new System.Drawing.Point(265, 115);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(32, 32);
-            this.btnSave.TabIndex = 7;
+            this.btnSave.TabIndex = 4;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 

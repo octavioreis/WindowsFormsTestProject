@@ -92,7 +92,7 @@
             this.txtPrice.Location = new System.Drawing.Point(53, 29);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(206, 20);
-            this.txtPrice.TabIndex = 2;
+            this.txtPrice.TabIndex = 1;
             // 
             // cbTank
             // 
@@ -101,7 +101,7 @@
             this.cbTank.Location = new System.Drawing.Point(53, 58);
             this.cbTank.Name = "cbTank";
             this.cbTank.Size = new System.Drawing.Size(206, 21);
-            this.cbTank.TabIndex = 3;
+            this.cbTank.TabIndex = 2;
             // 
             // btnGoToTank
             // 
@@ -110,7 +110,7 @@
             this.btnGoToTank.Location = new System.Drawing.Point(265, 55);
             this.btnGoToTank.Name = "btnGoToTank";
             this.btnGoToTank.Size = new System.Drawing.Size(32, 28);
-            this.btnGoToTank.TabIndex = 4;
+            this.btnGoToTank.TabIndex = 3;
             this.btnGoToTank.UseVisualStyleBackColor = true;
             this.btnGoToTank.Click += new System.EventHandler(this.btnGoToTank_Click);
             // 
@@ -130,7 +130,7 @@
             this.txtName.Location = new System.Drawing.Point(53, 3);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(206, 20);
-            this.txtName.TabIndex = 6;
+            this.txtName.TabIndex = 0;
             // 
             // btnSave
             // 
@@ -139,7 +139,7 @@
             this.btnSave.Location = new System.Drawing.Point(265, 115);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(32, 32);
-            this.btnSave.TabIndex = 8;
+            this.btnSave.TabIndex = 4;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
