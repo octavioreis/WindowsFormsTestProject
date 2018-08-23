@@ -30,12 +30,10 @@
         {
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.lbItems = new System.Windows.Forms.ListBox();
-            this.tlpRegistries = new System.Windows.Forms.TableLayoutPanel();
             this.fuelView1 = new TestProject.View.Views.FuelView();
             this.nozzleView1 = new TestProject.View.Views.NozzleView();
             this.tankView1 = new TestProject.View.Views.TankView();
             this.tlpMain.SuspendLayout();
-            this.tlpRegistries.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -44,7 +42,9 @@
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.83333F));
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.16666F));
             this.tlpMain.Controls.Add(this.lbItems, 0, 0);
-            this.tlpMain.Controls.Add(this.tlpRegistries, 1, 0);
+            this.tlpMain.Controls.Add(this.fuelView1, 1, 0);
+            this.tlpMain.Controls.Add(this.nozzleView1, 1, 0);
+            this.tlpMain.Controls.Add(this.tankView1, 1, 0);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
@@ -62,23 +62,6 @@
             this.lbItems.Size = new System.Drawing.Size(186, 526);
             this.lbItems.TabIndex = 0;
             this.lbItems.SelectedIndexChanged += new System.EventHandler(this.lbItems_SelectedIndexChanged);
-            // 
-            // tlpRegistries
-            // 
-            this.tlpRegistries.ColumnCount = 1;
-            this.tlpRegistries.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRegistries.Controls.Add(this.fuelView1, 0, 0);
-            this.tlpRegistries.Controls.Add(this.nozzleView1, 0, 2);
-            this.tlpRegistries.Controls.Add(this.tankView1, 0, 1);
-            this.tlpRegistries.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRegistries.Location = new System.Drawing.Point(195, 3);
-            this.tlpRegistries.Name = "tlpRegistries";
-            this.tlpRegistries.RowCount = 3;
-            this.tlpRegistries.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpRegistries.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpRegistries.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpRegistries.Size = new System.Drawing.Size(520, 526);
-            this.tlpRegistries.TabIndex = 1;
             // 
             // fuelView1
             // 
@@ -122,7 +105,6 @@
             this.Name = "ItemsView";
             this.Size = new System.Drawing.Size(718, 532);
             this.tlpMain.ResumeLayout(false);
-            this.tlpRegistries.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -131,7 +113,6 @@
 
         private System.Windows.Forms.TableLayoutPanel tlpMain;
         private System.Windows.Forms.ListBox lbItems;
-        private System.Windows.Forms.TableLayoutPanel tlpRegistries;
         private FuelView fuelView1;
         private NozzleView nozzleView1;
         private TankView tankView1;
