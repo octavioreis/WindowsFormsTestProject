@@ -9,7 +9,7 @@ namespace TestProject.Controller.Interfaces
         string StorageCapacity { get; set; }
         Fuel Fuel { get; set; }
 
-        void SetFuelOptions(IEnumerable<Fuel> fuel);
+        void SetFuelOptions(IEnumerable<Fuel> fuels);
         void SetViewVisibility(bool visible);
 
         void SetController(TankController controller);

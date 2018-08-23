@@ -39,6 +39,11 @@ namespace TestProject.View.Views
             return tankView1;
         }
 
+        public INozzleView GetNozzleView()
+        {
+            return nozzleView1;
+        }
+
         public void SelectItem(IdentifiedRegistry item)
         {
             lbItems.SelectedItem = item;

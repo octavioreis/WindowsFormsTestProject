@@ -45,10 +45,12 @@
     <Compile Include="Interfaces\IFuelView.cs" />
     <Compile Include="Interfaces\IItemsView.cs" />
     <Compile Include="Interfaces\IMainView.cs" />
+    <Compile Include="Interfaces\INozzleView.cs" />
     <Compile Include="Interfaces\ITankView.cs" />
     <Compile Include="ItemsController.cs" />
     <Compile Include="MainController.cs" />
     <Compile Include="ModelWrappers\FuelTypeObject.cs" />
+    <Compile Include="NozzleController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TankController.cs" />
   </ItemGroup>

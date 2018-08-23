@@ -10,6 +10,7 @@ namespace TestProject.Controller.Interfaces
 
         IFuelView GetFuelView();
         ITankView GetTankView();
+        INozzleView GetNozzleView();
 
         void SetController(ItemsController controller);
     }

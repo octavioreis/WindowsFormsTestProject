@@ -14,6 +14,7 @@ namespace TestProject.Controller
         private readonly IDatabase _database;
         private readonly FuelController _fuelController;
         private readonly TankController _tankController;
+        private readonly NozzleController _nozzleController;
 
         public ItemsController(IItemsView view, IDatabase database)
         {
@@ -24,33 +25,41 @@ namespace TestProject.Controller
 
             _fuelController = new FuelController(view.GetFuelView(), database);
             _tankController = new TankController(view.GetTankView(), database);
+            _nozzleController = new NozzleController(view.GetNozzleView(), database);
         }
 
         public void LoadItems(RegistryType registryType)
         {
             IEnumerable<IdentifiedRegistry> items = null;
+            bool fuelViewVisibility = false;
+            bool tankViewVisibility = false;
+            bool nozzleViewVisibility = false;
 
             switch (registryType)
             {
                 case RegistryType.Fuel:
-                    _fuelController.SetViewVisibility(true);
-                    _tankController.SetViewVisibility(false);
-
+                    fuelViewVisibility = true;
+                    tankViewVisibility = false;
+                    nozzleViewVisibility = false;
                     items = _database.GetFuels();
                     break;
                 case RegistryType.Tank:
-                    _fuelController.SetViewVisibility(false);
-                    _tankController.SetViewVisibility(true);
-
+                    fuelViewVisibility = false;
+                    tankViewVisibility = true;
+                    nozzleViewVisibility = false;
                     items = _database.GetTanks();
                     break;
                 case RegistryType.Nozzle:
-                    _fuelController.SetViewVisibility(false);
-                    _tankController.SetViewVisibility(false);
-
+                    fuelViewVisibility = false;
+                    tankViewVisibility = false;
+                    nozzleViewVisibility = true;
                     items = _database.GetNozzles();
                     break;
             }
+
+            _fuelController.SetViewVisibility(fuelViewVisibility);
+            _tankController.SetViewVisibility(tankViewVisibility);
+            _nozzleController.SetViewVisibility(nozzleViewVisibility);
 
             LoadItems(items);
         }
@@ -62,9 +71,7 @@ namespace TestProject.Controller
             else if (identifiedRegistry is Tank)
                 _tankController.SetTank(identifiedRegistry as Tank);
             else if (identifiedRegistry is Nozzle)
-            {
-
-            }
+                _nozzleController.SetNozzle(identifiedRegistry as Nozzle);
         }
 
         public void LoadItems(IEnumerable<IdentifiedRegistry> items)
