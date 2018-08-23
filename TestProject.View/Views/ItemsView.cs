@@ -15,7 +15,7 @@ namespace TestProject.View.Views
             InitializeComponent();
         }
 
-        #region IItemsView Implementation
+        #region IItemsView Members
 
         public void SetController(ItemsController controller)
         {

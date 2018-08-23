@@ -21,6 +21,8 @@ namespace TestProject.Controller
             view.SetController(this);
         }
 
+        #region AbstractRegistryController Members
+
         public override IdentifiedRegistry AddItem()
         {
             var newFuel = _database.CreateEmptyFuel();
@@ -60,16 +62,17 @@ namespace TestProject.Controller
 
         public override void SetSelectedItem(IdentifiedRegistry identifiedRegistry)
         {
-            SetSelectedFuel(identifiedRegistry as Fuel);
-        }
-
-        public void SetSelectedFuel(Fuel fuel)
-        {
-            _fuel = fuel;
+            _fuel = identifiedRegistry as Fuel;
             UpdateView();
         }
 
-        public void UpdateModel()
+        public override void UpdateView()
+        {
+            _view.FuelName = _fuel.Name;
+            _view.FuelType = _fuel.Type;
+        }
+
+        protected sealed override void UpdateModel()
         {
             _fuel.Name = _view.FuelName;
             _fuel.Type = _view.FuelType;
@@ -77,10 +80,11 @@ namespace TestProject.Controller
             CallModelChanged();
         }
 
-        public void UpdateView()
+        protected sealed override bool ValidateFields(out string message)
         {
-            _view.FuelName = _fuel.Name;
-            _view.FuelType = _fuel.Type;
+            return Validator.ValidateName(_view.FuelName, out message);
         }
+
+        #endregion
     }
 }

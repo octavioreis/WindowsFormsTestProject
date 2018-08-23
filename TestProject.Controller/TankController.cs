@@ -22,6 +22,8 @@ namespace TestProject.Controller
             view.SetController(this);
         }
 
+        #region AbstractRegistryController Members
+
         public override IdentifiedRegistry AddItem()
         {
             var newTank = _database.CreateEmptyTank();
@@ -81,7 +83,14 @@ namespace TestProject.Controller
             UpdateView();
         }
 
-        public void UpdateModel()
+        public override void UpdateView()
+        {
+            _view.TankName = _tank.Name;
+            _view.StorageCapacity = _tank.StorageCapacity;
+            _view.Fuel = _fuels.FirstOrDefault(f => f.Id == _tank.FuelId);
+        }
+
+        protected sealed override void UpdateModel()
         {
             _tank.Name = _view.TankName;
             _tank.StorageCapacity = _view.StorageCapacity;
@@ -90,11 +99,17 @@ namespace TestProject.Controller
             CallModelChanged();
         }
 
-        public void UpdateView()
+        protected sealed override bool ValidateFields(out string message)
         {
-            _view.TankName = _tank.Name;
-            _view.StorageCapacity = _tank.StorageCapacity;
-            _view.Fuel = _fuels.FirstOrDefault(f => f.Id == _tank.FuelId);
+            if (!Validator.ValidateName(_view.TankName, out message))
+                return false;
+
+            if (!Validator.ValidateName(_view.StorageCapacity, out message))
+                return false;
+
+            return true;
         }
+
+        #endregion
     }
 }
