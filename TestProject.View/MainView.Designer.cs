@@ -35,8 +35,10 @@
             this.rbTanks = new System.Windows.Forms.RadioButton();
             this.rbNozzles = new System.Windows.Forms.RadioButton();
             this.itemsView = new TestProject.View.Views.ItemsView();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.tlpMain.SuspendLayout();
             this.tlpMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -45,14 +47,15 @@
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.Controls.Add(this.tlpMenu, 0, 1);
             this.tlpMain.Controls.Add(this.itemsView, 0, 2);
+            this.tlpMain.Controls.Add(this.pbLogo, 0, 0);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 3;
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.64102F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 74.35898F));
-            this.tlpMain.Size = new System.Drawing.Size(800, 450);
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMain.Size = new System.Drawing.Size(784, 461);
             this.tlpMain.TabIndex = 0;
             // 
             // tlpMenu
@@ -66,7 +69,7 @@
             this.tlpMenu.Controls.Add(this.rbFuels, 0, 0);
             this.tlpMenu.Controls.Add(this.rbTanks, 1, 0);
             this.tlpMenu.Controls.Add(this.rbNozzles, 2, 0);
-            this.tlpMenu.Location = new System.Drawing.Point(226, 105);
+            this.tlpMenu.Location = new System.Drawing.Point(218, 104);
             this.tlpMenu.Name = "tlpMenu";
             this.tlpMenu.RowCount = 1;
             this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -118,23 +121,37 @@
             // itemsView
             // 
             this.itemsView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.itemsView.Location = new System.Drawing.Point(3, 157);
+            this.itemsView.Location = new System.Drawing.Point(3, 156);
             this.itemsView.Name = "itemsView";
-            this.itemsView.Size = new System.Drawing.Size(794, 290);
+            this.itemsView.Size = new System.Drawing.Size(778, 302);
             this.itemsView.TabIndex = 1;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbLogo.Image = global::TestProject.View.Properties.Resources.logo;
+            this.pbLogo.Location = new System.Drawing.Point(319, 3);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.pbLogo.Size = new System.Drawing.Size(146, 95);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbLogo.TabIndex = 2;
+            this.pbLogo.TabStop = false;
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.tlpMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(400, 400);
             this.Name = "MainView";
             this.Text = "Databoff - Projeto teste";
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();
             this.tlpMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,5 +164,6 @@
         private System.Windows.Forms.RadioButton rbNozzles;
         private System.Windows.Forms.RadioButton rbTanks;
         private System.Windows.Forms.RadioButton rbFuels;
+        private System.Windows.Forms.PictureBox pbLogo;
     }
 }
