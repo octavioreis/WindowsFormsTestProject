@@ -84,7 +84,7 @@ namespace TestProject.Database
             {
                 Id = Guid.NewGuid(),
                 Name = string.Concat("Tanque.", _tanks.Count + 1),
-                StorageCapacity = "0"
+                StorageCapacity = 0f
             };
         }
 

@@ -20,8 +20,8 @@ namespace TestProject.Database
         {
             return new List<Tank>()
             {
-                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.1", StorageCapacity = "20", FuelId = fuels[0].Id },
-                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.2", StorageCapacity = "25.5", FuelId = fuels[1].Id }
+                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.1", StorageCapacity = 20f, FuelId = fuels[0].Id },
+                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.2", StorageCapacity = 25.5f, FuelId = fuels[1].Id }
             };
         }
 

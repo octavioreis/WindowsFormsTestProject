@@ -20,10 +20,10 @@ namespace TestProject.View.Views
             set { txtName.Text = value; }
         }
 
-        public string StorageCapacity
+        public float StorageCapacity
         {
-            get { return txtCapacity.Text; }
-            set { txtCapacity.Text = value; }
+            get { return (float)nudCapacity.Value; }
+            set { nudCapacity.Value = (decimal)value; }
         }
 
         public Fuel Fuel

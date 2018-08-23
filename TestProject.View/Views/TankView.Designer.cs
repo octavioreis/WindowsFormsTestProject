@@ -32,14 +32,15 @@
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.lblCapacity = new System.Windows.Forms.Label();
             this.lblFuel = new System.Windows.Forms.Label();
-            this.txtCapacity = new System.Windows.Forms.TextBox();
             this.cbFuel = new System.Windows.Forms.ComboBox();
             this.btnGoToFuel = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.nudCapacity = new System.Windows.Forms.NumericUpDown();
             this.tipSaveButton = new System.Windows.Forms.ToolTip(this.components);
             this.tlpMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCapacity)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -50,12 +51,12 @@
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpMain.Controls.Add(this.lblCapacity, 0, 1);
             this.tlpMain.Controls.Add(this.lblFuel, 0, 2);
-            this.tlpMain.Controls.Add(this.txtCapacity, 1, 1);
             this.tlpMain.Controls.Add(this.cbFuel, 1, 2);
             this.tlpMain.Controls.Add(this.btnGoToFuel, 2, 2);
             this.tlpMain.Controls.Add(this.lblName, 0, 0);
             this.tlpMain.Controls.Add(this.txtName, 1, 0);
             this.tlpMain.Controls.Add(this.btnSave, 2, 4);
+            this.tlpMain.Controls.Add(this.nudCapacity, 1, 1);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
@@ -87,14 +88,6 @@
             this.lblFuel.Size = new System.Drawing.Size(66, 13);
             this.lblFuel.TabIndex = 1;
             this.lblFuel.Text = "Combustível";
-            // 
-            // txtCapacity
-            // 
-            this.txtCapacity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCapacity.Location = new System.Drawing.Point(75, 29);
-            this.txtCapacity.Name = "txtCapacity";
-            this.txtCapacity.Size = new System.Drawing.Size(184, 20);
-            this.txtCapacity.TabIndex = 1;
             // 
             // cbFuel
             // 
@@ -146,6 +139,15 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // nudCapacity
+            // 
+            this.nudCapacity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudCapacity.DecimalPlaces = 2;
+            this.nudCapacity.Location = new System.Drawing.Point(75, 29);
+            this.nudCapacity.Name = "nudCapacity";
+            this.nudCapacity.Size = new System.Drawing.Size(184, 20);
+            this.nudCapacity.TabIndex = 6;
+            // 
             // TankView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,6 +157,7 @@
             this.Size = new System.Drawing.Size(300, 150);
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCapacity)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -164,12 +167,12 @@
         private System.Windows.Forms.TableLayoutPanel tlpMain;
         private System.Windows.Forms.Label lblCapacity;
         private System.Windows.Forms.Label lblFuel;
-        private System.Windows.Forms.TextBox txtCapacity;
         private System.Windows.Forms.ComboBox cbFuel;
         private System.Windows.Forms.Button btnGoToFuel;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ToolTip tipSaveButton;
+        private System.Windows.Forms.NumericUpDown nudCapacity;
     }
 }

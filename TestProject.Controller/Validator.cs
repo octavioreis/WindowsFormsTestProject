@@ -14,18 +14,5 @@
 
             return true;
         }
-
-        public static bool ValidateFloatValue(string value, out string message)
-        {
-            message = null;
-
-            if (!float.TryParse(value, out float result))
-            {
-                message = $"O valor {value} não pode conter texto.";
-                return false;
-            }
-
-            return true;
-        }
     }
 }

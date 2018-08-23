@@ -101,7 +101,7 @@
             this.tankView1.Location = new System.Drawing.Point(3, 515);
             this.tankView1.Name = "tankView1";
             this.tankView1.Size = new System.Drawing.Size(186, 14);
-            this.tankView1.StorageCapacity = "";
+            this.tankView1.StorageCapacity = 0f;
             this.tankView1.TabIndex = 2;
             this.tankView1.TankName = "";
             this.tankView1.Visible = false;

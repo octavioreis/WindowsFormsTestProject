@@ -24,11 +24,11 @@ namespace TestProject.Database
         {
             return new List<Tank>()
             {
-                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.1", StorageCapacity = "25.5", FuelId = fuels[2].Id },
-                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.2", StorageCapacity = "50", FuelId = fuels[0].Id },
-                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.3", StorageCapacity = "37" },
-                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.4", StorageCapacity = "20", FuelId = fuels[5].Id },
-                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.5", StorageCapacity = "35.7", FuelId = fuels[5].Id },
+                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.1", StorageCapacity = 25.5f, FuelId = fuels[2].Id },
+                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.2", StorageCapacity = 50f, FuelId = fuels[0].Id },
+                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.3", StorageCapacity = 37f },
+                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.4", StorageCapacity = 20f, FuelId = fuels[5].Id },
+                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.5", StorageCapacity = 35.7f, FuelId = fuels[5].Id },
             };
         }
 

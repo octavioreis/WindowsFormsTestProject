@@ -63,7 +63,8 @@ namespace TestProject.Controller
 
         public override void SetSelectedItem(IdentifiedRegistry identifiedRegistry)
         {
-            SetSelectedTank(identifiedRegistry as Tank);
+            _tank = identifiedRegistry as Tank;
+            UpdateView();
         }
 
         public override void SetViewVisibility(bool visible)
@@ -75,12 +76,6 @@ namespace TestProject.Controller
             }
 
             base.SetViewVisibility(visible);
-        }
-
-        public void SetSelectedTank(Tank tank)
-        {
-            _tank = tank;
-            UpdateView();
         }
 
         public override void UpdateView()
@@ -101,13 +96,7 @@ namespace TestProject.Controller
 
         protected sealed override bool ValidateFields(out string message)
         {
-            if (!Validator.ValidateName(_view.TankName, out message))
-                return false;
-
-            if (!Validator.ValidateName(_view.StorageCapacity, out message))
-                return false;
-
-            return true;
+            return Validator.ValidateName(_view.TankName, out message);
         }
 
         #endregion

@@ -6,7 +6,7 @@ namespace TestProject.Controller.Interfaces
     public interface ITankView : IRegistryView
     {
         string TankName { get; set; }
-        string StorageCapacity { get; set; }
+        float StorageCapacity { get; set; }
         Fuel Fuel { get; set; }
 
         void SetFuelOptions(IEnumerable<Fuel> fuels);

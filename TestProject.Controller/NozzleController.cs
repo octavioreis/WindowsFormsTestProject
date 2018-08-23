@@ -45,7 +45,8 @@ namespace TestProject.Controller
 
         public override void SetSelectedItem(IdentifiedRegistry identifiedRegistry)
         {
-            SetSelectedNozzle(identifiedRegistry as Nozzle);
+            _nozzle = identifiedRegistry as Nozzle;
+            UpdateView();
         }
 
         public override void SetViewVisibility(bool visible)
@@ -59,13 +60,14 @@ namespace TestProject.Controller
             base.SetViewVisibility(visible);
         }
 
-        public void SetSelectedNozzle(Nozzle nozzle)
+        public override void UpdateView()
         {
-            _nozzle = nozzle;
-            UpdateView();
+            _view.NozzleName = _nozzle.Name;
+            _view.SellingPrice = _nozzle.SellingPrice;
+            _view.Tank = _tanks.FirstOrDefault(f => f.Id == _nozzle.TankId);
         }
 
-        public void UpdateModel()
+        protected sealed override void UpdateModel()
         {
             _nozzle.Name = _view.NozzleName;
             _nozzle.SellingPrice = _view.SellingPrice;
@@ -74,11 +76,9 @@ namespace TestProject.Controller
             CallModelChanged();
         }
 
-        public void UpdateView()
+        protected sealed override bool ValidateFields(out string message)
         {
-            _view.NozzleName = _nozzle.Name;
-            _view.SellingPrice = _nozzle.SellingPrice;
-            _view.Tank = _tanks.FirstOrDefault(f => f.Id == _nozzle.TankId);
+            return Validator.ValidateName(_view.NozzleName, out message);
         }
     }
 }
