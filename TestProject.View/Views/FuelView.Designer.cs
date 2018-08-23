@@ -49,6 +49,7 @@
             this.tlpMain.Controls.Add(this.txtName, 1, 0);
             this.tlpMain.Controls.Add(this.cbType, 1, 1);
             this.tlpMain.Controls.Add(this.btnSave, 1, 3);
+            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 4;
@@ -81,7 +82,7 @@
             // 
             // txtName
             // 
-            this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.Location = new System.Drawing.Point(44, 3);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(253, 20);
@@ -89,7 +90,7 @@
             // 
             // cbType
             // 
-            this.cbType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbType.FormattingEnabled = true;
             this.cbType.Location = new System.Drawing.Point(44, 29);
             this.cbType.Name = "cbType";

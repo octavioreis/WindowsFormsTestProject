@@ -122,7 +122,7 @@
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(35, 13);
             this.lblName.TabIndex = 5;
-            this.lblName.Text = "Name";
+            this.lblName.Text = "Nome";
             // 
             // txtName
             // 
