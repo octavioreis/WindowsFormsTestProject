@@ -11,22 +11,20 @@ namespace TestProject.Controller
     public class ItemsController
     {
         private readonly IItemsView _view;
-        private readonly IDatabase _database;
         private readonly FuelController _fuelController;
         private readonly TankController _tankController;
         private readonly NozzleController _nozzleController;
         private AbstractRegistryController _currentController;
 
-        public ItemsController(IItemsView view, IDatabase database)
+        public ItemsController(IItemsView view, IDatabase database, INavigator navigator)
         {
-            _view = view ?? throw new ArgumentNullException(nameof(view));
-            _database = database ?? throw new ArgumentNullException(nameof(database)); ;
+            _view = view;
 
             view.SetController(this);
 
             _fuelController = new FuelController(view.GetFuelView(), database);
-            _tankController = new TankController(view.GetTankView(), database);
-            _nozzleController = new NozzleController(view.GetNozzleView(), database);
+            _tankController = new TankController(view.GetTankView(), database, navigator);
+            _nozzleController = new NozzleController(view.GetNozzleView(), database, navigator);
 
             _fuelController.ModelChanged += ModelChanged;
             _tankController.ModelChanged += ModelChanged;
@@ -77,7 +75,12 @@ namespace TestProject.Controller
                 _view.ShowErrorMessage(errorMessage);
         }
 
-        public void SelectedItemChanged(IdentifiedRegistry identifiedRegistry)
+        public void SelectItem(Guid id)
+        {
+            _view.SelectItem(id);
+        }
+
+        public void UpdateRegistryViewInformation(IdentifiedRegistry identifiedRegistry)
         {
             if (identifiedRegistry == null)
             {

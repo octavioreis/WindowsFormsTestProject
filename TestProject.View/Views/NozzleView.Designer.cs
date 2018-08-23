@@ -32,14 +32,15 @@
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblTank = new System.Windows.Forms.Label();
-            this.txtPrice = new System.Windows.Forms.TextBox();
             this.cbTank = new System.Windows.Forms.ComboBox();
             this.btnGoToTank = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.tipSaveButton = new System.Windows.Forms.ToolTip(this.components);
+            this.nudSellingPrice = new System.Windows.Forms.NumericUpDown();
             this.tlpMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSellingPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -50,12 +51,12 @@
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpMain.Controls.Add(this.lblPrice, 0, 1);
             this.tlpMain.Controls.Add(this.lblTank, 0, 2);
-            this.tlpMain.Controls.Add(this.txtPrice, 1, 1);
             this.tlpMain.Controls.Add(this.cbTank, 1, 2);
             this.tlpMain.Controls.Add(this.btnGoToTank, 2, 2);
             this.tlpMain.Controls.Add(this.lblName, 0, 0);
             this.tlpMain.Controls.Add(this.txtName, 1, 0);
             this.tlpMain.Controls.Add(this.btnSave, 2, 4);
+            this.tlpMain.Controls.Add(this.nudSellingPrice, 1, 1);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
@@ -87,14 +88,6 @@
             this.lblTank.Size = new System.Drawing.Size(44, 13);
             this.lblTank.TabIndex = 1;
             this.lblTank.Text = "Tanque";
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrice.Location = new System.Drawing.Point(53, 29);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(206, 20);
-            this.txtPrice.TabIndex = 1;
             // 
             // cbTank
             // 
@@ -146,6 +139,15 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // nudSellingPrice
+            // 
+            this.nudSellingPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudSellingPrice.DecimalPlaces = 2;
+            this.nudSellingPrice.Location = new System.Drawing.Point(53, 29);
+            this.nudSellingPrice.Name = "nudSellingPrice";
+            this.nudSellingPrice.Size = new System.Drawing.Size(206, 20);
+            this.nudSellingPrice.TabIndex = 6;
+            // 
             // NozzleView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,6 +157,7 @@
             this.Size = new System.Drawing.Size(300, 150);
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSellingPrice)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -164,12 +167,12 @@
         private System.Windows.Forms.TableLayoutPanel tlpMain;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblTank;
-        private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.ComboBox cbTank;
         private System.Windows.Forms.Button btnGoToTank;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ToolTip tipSaveButton;
+        private System.Windows.Forms.NumericUpDown nudSellingPrice;
     }
 }

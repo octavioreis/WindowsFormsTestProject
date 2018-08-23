@@ -29,8 +29,8 @@ namespace TestProject.Database
         {
             return new List<Nozzle>()
             {
-                new Nozzle() { Id = Guid.NewGuid(), Name = "Bico.1", SellingPrice = "4.05", TankId = tanks[0].Id },
-                new Nozzle() { Id = Guid.NewGuid(), Name = "Bico.2", SellingPrice = "4.20", TankId = tanks[1].Id }
+                new Nozzle() { Id = Guid.NewGuid(), Name = "Bico.1", SellingPrice = 4.05f, TankId = tanks[0].Id },
+                new Nozzle() { Id = Guid.NewGuid(), Name = "Bico.2", SellingPrice = 4.20f, TankId = tanks[1].Id }
             };
         }
     }

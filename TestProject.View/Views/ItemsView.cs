@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using TestProject.Controller;
 using TestProject.Controller.Interfaces;
@@ -52,14 +53,14 @@ namespace TestProject.View.Views
             lbItems.Items.Remove(item);
         }
 
+        public void SelectItem(Guid id)
+        {
+            SelectItem(lbItems.Items.OfType<IdentifiedRegistry>().FirstOrDefault(r => r.Id == id));
+        }
+
         public void SelectItem(IdentifiedRegistry item)
         {
             lbItems.SelectedItem = item;
-        }
-
-        public void SelectItem(Guid id)
-        {
-            throw new NotImplementedException();
         }
 
         public void ShowErrorMessage(string message)
@@ -87,7 +88,7 @@ namespace TestProject.View.Views
 
         private void lbItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _controller.SelectedItemChanged(GetSelectedRegistry());
+            _controller.UpdateRegistryViewInformation(GetSelectedRegistry());
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

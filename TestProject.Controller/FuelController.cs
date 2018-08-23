@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TestProject.Controller.Interfaces;
@@ -29,6 +30,11 @@ namespace TestProject.Controller
             _database.AddFuel(newFuel);
 
             return newFuel;
+        }
+
+        public override IdentifiedRegistry GetItem(Guid id)
+        {
+            return _database.GetFuel(id);
         }
 
         public override IEnumerable<IdentifiedRegistry> GetItems()
@@ -76,6 +82,7 @@ namespace TestProject.Controller
         {
             _fuel.Name = _view.FuelName;
             _fuel.Type = _view.FuelType;
+            _database.SerializeFuel(_fuel.Id);
 
             CallModelChanged();
         }

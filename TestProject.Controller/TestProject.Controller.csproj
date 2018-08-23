@@ -47,6 +47,7 @@
     <Compile Include="Interfaces\IFuelView.cs" />
     <Compile Include="Interfaces\IItemsView.cs" />
     <Compile Include="Interfaces\IMainView.cs" />
+    <Compile Include="Interfaces\INavigator.cs" />
     <Compile Include="Interfaces\INozzleView.cs" />
     <Compile Include="Interfaces\IRegistryView.cs" />
     <Compile Include="Interfaces\ITankView.cs" />

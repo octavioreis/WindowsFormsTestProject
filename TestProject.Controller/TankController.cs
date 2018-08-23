@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TestProject.Controller.Interfaces;
@@ -11,13 +12,15 @@ namespace TestProject.Controller
     {
         private readonly ITankView _view;
         private readonly IDatabase _database;
+        private readonly INavigator _navigator;
         private Tank _tank;
         private IEnumerable<Fuel> _fuels;
 
-        public TankController(ITankView view, IDatabase database) : base(view)
+        public TankController(ITankView view, IDatabase database, INavigator navigator) : base(view)
         {
             _view = view;
             _database = database;
+            _navigator = navigator;
 
             view.SetController(this);
         }
@@ -30,6 +33,11 @@ namespace TestProject.Controller
             _database.AddTank(newTank);
 
             return newTank;
+        }
+
+        public override IdentifiedRegistry GetItem(Guid id)
+        {
+            return _database.GetTank(id);
         }
 
         public override IEnumerable<IdentifiedRegistry> GetItems()
@@ -90,6 +98,7 @@ namespace TestProject.Controller
             _tank.Name = _view.TankName;
             _tank.StorageCapacity = _view.StorageCapacity;
             _tank.FuelId = _view.Fuel?.Id;
+            _database.SerializeTank(_tank.Id);
 
             CallModelChanged();
         }
@@ -100,5 +109,11 @@ namespace TestProject.Controller
         }
 
         #endregion
+
+        public void NavigateToFuel()
+        {
+            if (_view.Fuel != null)
+                _navigator.NavigateToFuel(_view.Fuel.Id);
+        }
     }
 }

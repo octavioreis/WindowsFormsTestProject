@@ -69,7 +69,7 @@ namespace TestProject.View.Views
 
         private void btnGoToFuel_Click(object sender, EventArgs e)
         {
-
+            _controller.NavigateToFuel();
         }
     }
 }

@@ -88,7 +88,7 @@
             this.nozzleView1.Location = new System.Drawing.Point(195, 515);
             this.nozzleView1.Name = "nozzleView1";
             this.nozzleView1.NozzleName = "";
-            this.nozzleView1.SellingPrice = "";
+            this.nozzleView1.SellingPrice = 0f;
             this.nozzleView1.Size = new System.Drawing.Size(520, 14);
             this.nozzleView1.TabIndex = 1;
             this.nozzleView1.Tank = null;

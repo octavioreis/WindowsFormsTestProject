@@ -23,19 +23,19 @@ namespace TestProject.Database
             _nozzles = CreateNozzlesList(_tanks);
         }
 
-        public void AddFuel(Fuel fuel)
+        public Fuel GetFuel(Guid id)
         {
-            _fuels.Add(fuel);
+            return _fuels.FirstOrDefault(f => f.Id == id);
         }
 
-        public void AddTank(Tank tank)
+        public Tank GetTank(Guid id)
         {
-            _tanks.Add(tank);
+            return _tanks.FirstOrDefault(t => t.Id == id);
         }
 
-        public void AddNozzle(Nozzle nozzle)
+        public Nozzle GetNozzle(Guid id)
         {
-            _nozzles.Add(nozzle);
+            return _nozzles.FirstOrDefault(n => n.Id == id);
         }
 
         public IEnumerable<Fuel> GetFuels()
@@ -53,19 +53,25 @@ namespace TestProject.Database
             return _nozzles.AsEnumerable();
         }
 
-        public void RemoveFuel(Guid id)
+        public void AddFuel(Fuel fuel)
         {
-            _fuels.Remove(_fuels.FirstOrDefault(f => f.Id == id));
+            _fuels.Add(fuel);
+
+            SerializeFuel(fuel.Id);
         }
 
-        public void RemoveTank(Guid id)
+        public void AddTank(Tank tank)
         {
-            _tanks.Remove(_tanks.FirstOrDefault(t => t.Id == id));
+            _tanks.Add(tank);
+
+            SerializeTank(tank.Id);
         }
 
-        public void RemoveNozzle(Guid id)
+        public void AddNozzle(Nozzle nozzle)
         {
-            _nozzles.Remove(_nozzles.FirstOrDefault(n => n.Id == id));
+            _nozzles.Add(nozzle);
+
+            SerializeNozzle(nozzle.Id);
         }
 
         public Fuel CreateEmptyFuel()
@@ -94,8 +100,38 @@ namespace TestProject.Database
             {
                 Id = Guid.NewGuid(),
                 Name = string.Concat("Bico.", _nozzles.Count + 1),
-                SellingPrice = "0"
+                SellingPrice = 0f
             };
+        }
+
+        public void RemoveFuel(Guid id)
+        {
+            _fuels.Remove(_fuels.FirstOrDefault(f => f.Id == id));
+        }
+
+        public void RemoveTank(Guid id)
+        {
+            _tanks.Remove(_tanks.FirstOrDefault(t => t.Id == id));
+        }
+
+        public void RemoveNozzle(Guid id)
+        {
+            _nozzles.Remove(_nozzles.FirstOrDefault(n => n.Id == id));
+        }
+
+        public void SerializeFuel(Guid id)
+        {
+            //Método para serializar informações do combustível depois que o mesmo for alterado.
+        }
+
+        public void SerializeTank(Guid id)
+        {
+            //Método para serializar informações do tanque depois que o mesmo for alterado.
+        }
+
+        public void SerializeNozzle(Guid id)
+        {
+            //Método para serializar informações do bico depois que o mesmo for alterado.
         }
 
         public IEnumerable<Tank> GetTanksUsingFuel(Guid fuelId)

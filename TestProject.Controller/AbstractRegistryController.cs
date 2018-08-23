@@ -16,6 +16,7 @@ namespace TestProject.Controller
         }
 
         public abstract IdentifiedRegistry AddItem();
+        public abstract IdentifiedRegistry GetItem(Guid id);
         public abstract IEnumerable<IdentifiedRegistry> GetItems();
         public abstract void SetSelectedItem(IdentifiedRegistry identifiedRegistry);
         public abstract bool TryRemoveItem(IdentifiedRegistry identifiedRegistry, out string message);

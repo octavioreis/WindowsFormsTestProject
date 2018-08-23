@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using TestProject.Controller.Interfaces;
 using TestProject.Database;
@@ -10,16 +11,20 @@ namespace TestProject.Controller
     {
         private readonly INozzleView _view;
         private readonly IDatabase _database;
+        private readonly INavigator _navigator;
         private Nozzle _nozzle;
         private IEnumerable<Tank> _tanks;
 
-        public NozzleController(INozzleView view, IDatabase database) : base(view)
+        public NozzleController(INozzleView view, IDatabase database, INavigator navigator) : base(view)
         {
             _view = view;
             _database = database;
+            _navigator = navigator;
 
             view.SetController(this);
         }
+
+        #region AbstractRegistryController Members
 
         public override IdentifiedRegistry AddItem()
         {
@@ -27,6 +32,11 @@ namespace TestProject.Controller
             _database.AddNozzle(newNozzle);
 
             return newNozzle;
+        }
+
+        public override IdentifiedRegistry GetItem(Guid id)
+        {
+            return _database.GetNozzle(id);
         }
 
         public override IEnumerable<IdentifiedRegistry> GetItems()
@@ -72,6 +82,7 @@ namespace TestProject.Controller
             _nozzle.Name = _view.NozzleName;
             _nozzle.SellingPrice = _view.SellingPrice;
             _nozzle.TankId = _view.Tank.Id;
+            _database.SerializeNozzle(_nozzle.Id);
 
             CallModelChanged();
         }
@@ -79,6 +90,14 @@ namespace TestProject.Controller
         protected sealed override bool ValidateFields(out string message)
         {
             return Validator.ValidateName(_view.NozzleName, out message);
+        }
+
+        #endregion
+
+        public void NavigateToTank()
+        {
+            if (_view.Tank != null)
+                _navigator.NavigateToTank(_view.Tank.Id);
         }
     }
 }

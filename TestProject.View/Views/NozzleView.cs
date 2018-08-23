@@ -19,10 +19,10 @@ namespace TestProject.View.Views
             set { txtName.Text = value; }
         }
 
-        public string SellingPrice
+        public float SellingPrice
         {
-            get { return txtPrice.Text; }
-            set { txtPrice.Text = value; }
+            get { return (float)nudSellingPrice.Value; }
+            set { nudSellingPrice.Value = (decimal)value; }
         }
 
         public Tank Tank
@@ -68,7 +68,7 @@ namespace TestProject.View.Views
 
         private void btnGoToTank_Click(object sender, System.EventArgs e)
         {
-
+            _controller.NavigateToTank();
         }
     }
 }

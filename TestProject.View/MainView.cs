@@ -24,14 +24,16 @@ namespace TestProject.View
             return itemsView;
         }
 
-        public RegistryType GetSelectedTab()
+        public RegistryType? GetSelectedTab()
         {
             if (rbFuels.Checked)
                 return RegistryType.Fuel;
             else if (rbTanks.Checked)
                 return RegistryType.Tank;
-            else
+            else if (rbNozzles.Checked)
                 return RegistryType.Nozzle;
+
+            return null;
         }
 
         private void selectedTab_Changed(object sender, System.EventArgs e)
@@ -39,6 +41,24 @@ namespace TestProject.View
             var radioButton = (RadioButton)sender;
             if (radioButton.Checked)
                 _controller.LoadSelectedTab();
+        }
+
+        public void SelectTab(RegistryType type)
+        {
+            switch (type)
+            {
+                case RegistryType.Fuel:
+                    rbFuels.Checked = true;
+                    break;
+                case RegistryType.Tank:
+                    rbTanks.Checked = true;
+                    break;
+                case RegistryType.Nozzle:
+                    rbNozzles.Checked = true;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
