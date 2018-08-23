@@ -2,12 +2,10 @@
 
 namespace TestProject.Controller.Interfaces
 {
-    public interface IFuelView
+    public interface IFuelView : IRegistryView
     {
         string FuelName { get; set; }
         FuelType FuelType { get; set; }
-
-        void SetViewVisibility(bool visible);
 
         void SetController(FuelController controller);
     }

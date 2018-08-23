@@ -6,6 +6,6 @@ namespace TestProject.Model
     {
         public string StorageCapacity { get; set; }
 
-        public Guid FuelId { get; set; }
+        public Guid? FuelId { get; set; }
     }
 }

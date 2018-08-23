@@ -6,14 +6,14 @@ using TestProject.Model;
 
 namespace TestProject.Controller
 {
-    public class NozzleController
+    public class NozzleController : AbstractRegistryController
     {
         private readonly INozzleView _view;
         private readonly IDatabase _database;
         private Nozzle _nozzle;
         private IEnumerable<Tank> _tanks;
 
-        public NozzleController(INozzleView view, IDatabase database)
+        public NozzleController(INozzleView view, IDatabase database) : base(view)
         {
             _view = view;
             _database = database;
@@ -21,13 +21,34 @@ namespace TestProject.Controller
             view.SetController(this);
         }
 
-        public void SetNozzle(Nozzle nozzle)
+        public override IdentifiedRegistry AddItem()
         {
-            _nozzle = nozzle;
-            UpdateView();
+            var newNozzle = _database.CreateEmptyNozzle();
+            _database.AddNozzle(newNozzle);
+
+            return newNozzle;
         }
 
-        public void SetViewVisibility(bool visible)
+        public override IEnumerable<IdentifiedRegistry> GetItems()
+        {
+            return _database.GetNozzles();
+        }
+
+        public override bool TryRemoveItem(IdentifiedRegistry identifiedRegistry, out string message)
+        {
+            message = null;
+
+            _database.RemoveNozzle(identifiedRegistry.Id);
+
+            return true;
+        }
+
+        public override void SetSelectedItem(IdentifiedRegistry identifiedRegistry)
+        {
+            SetSelectedNozzle(identifiedRegistry as Nozzle);
+        }
+
+        public override void SetViewVisibility(bool visible)
         {
             if (visible)
             {
@@ -35,7 +56,13 @@ namespace TestProject.Controller
                 _view.SetTankOptions(_tanks);
             }
 
-            _view.SetViewVisibility(visible);
+            base.SetViewVisibility(visible);
+        }
+
+        public void SetSelectedNozzle(Nozzle nozzle)
+        {
+            _nozzle = nozzle;
+            UpdateView();
         }
 
         public void UpdateModel()

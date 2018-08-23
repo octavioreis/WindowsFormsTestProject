@@ -1,19 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using TestProject.Controller.Interfaces;
 using TestProject.Database;
 using TestProject.Model;
 
 namespace TestProject.Controller
 {
-    public class TankController
+    public class TankController : AbstractRegistryController
     {
         private readonly ITankView _view;
         private readonly IDatabase _database;
         private Tank _tank;
         private IEnumerable<Fuel> _fuels;
 
-        public TankController(ITankView view, IDatabase database)
+        public TankController(ITankView view, IDatabase database) : base(view)
         {
             _view = view;
             _database = database;
@@ -21,13 +22,49 @@ namespace TestProject.Controller
             view.SetController(this);
         }
 
-        public void SetTank(Tank tank)
+        public override IdentifiedRegistry AddItem()
         {
-            _tank = tank;
-            UpdateView();
+            var newTank = _database.CreateEmptyTank();
+            _database.AddTank(newTank);
+
+            return newTank;
         }
 
-        public void SetViewVisibility(bool visible)
+        public override IEnumerable<IdentifiedRegistry> GetItems()
+        {
+            return _database.GetTanks();
+        }
+
+        public override bool TryRemoveItem(IdentifiedRegistry identifiedRegistry, out string message)
+        {
+            message = null;
+
+            var nozzlesUsingTank = _database.GetNozzlesUsingTank(identifiedRegistry.Id);
+            if (nozzlesUsingTank.Any())
+            {
+                var stringBuilder = new StringBuilder();
+                stringBuilder.AppendLine("Não é possível remover o tanque pois os seguintes bicos estão o utilizando:");
+
+                foreach (var nozzle in nozzlesUsingTank)
+                {
+                    stringBuilder.Append("- ");
+                    stringBuilder.AppendLine(nozzle.Name);
+                }
+
+                message = stringBuilder.ToString();
+                return false;
+            }
+
+            _database.RemoveTank(identifiedRegistry.Id);
+            return true;
+        }
+
+        public override void SetSelectedItem(IdentifiedRegistry identifiedRegistry)
+        {
+            SetSelectedTank(identifiedRegistry as Tank);
+        }
+
+        public override void SetViewVisibility(bool visible)
         {
             if (visible)
             {
@@ -35,14 +72,20 @@ namespace TestProject.Controller
                 _view.SetFuelOptions(_fuels);
             }
 
-            _view.SetViewVisibility(visible);
+            base.SetViewVisibility(visible);
+        }
+
+        public void SetSelectedTank(Tank tank)
+        {
+            _tank = tank;
+            UpdateView();
         }
 
         public void UpdateModel()
         {
             _tank.Name = _view.TankName;
             _tank.StorageCapacity = _view.StorageCapacity;
-            _tank.FuelId = _view.Fuel.Id;
+            _tank.FuelId = _view.Fuel?.Id;
         }
 
         public void UpdateView()

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using TestProject.Model;
+using TestProject.Model.Enums;
 
 namespace TestProject.Database
 {
@@ -65,6 +66,46 @@ namespace TestProject.Database
         public void RemoveNozzle(Guid id)
         {
             _nozzles.Remove(_nozzles.FirstOrDefault(n => n.Id == id));
+        }
+
+        public Fuel CreateEmptyFuel()
+        {
+            return new Fuel()
+            {
+                Id = Guid.NewGuid(),
+                Name = string.Concat("Combustível.", _fuels.Count + 1),
+                Type = FuelType.CommonGasoline
+            };
+        }
+
+        public Tank CreateEmptyTank()
+        {
+            return new Tank()
+            {
+                Id = Guid.NewGuid(),
+                Name = string.Concat("Tanque.", _tanks.Count + 1),
+                StorageCapacity = "0"
+            };
+        }
+
+        public Nozzle CreateEmptyNozzle()
+        {
+            return new Nozzle()
+            {
+                Id = Guid.NewGuid(),
+                Name = string.Concat("Bico.", _nozzles.Count + 1),
+                SellingPrice = "0"
+            };
+        }
+
+        public IEnumerable<Tank> GetTanksUsingFuel(Guid fuelId)
+        {
+            return _tanks.Where(t => t.FuelId == fuelId);
+        }
+
+        public IEnumerable<Nozzle> GetNozzlesUsingTank(Guid tankId)
+        {
+            return _nozzles.Where(n => n.TankId == tankId);
         }
     }
 }

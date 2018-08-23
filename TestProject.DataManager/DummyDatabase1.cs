@@ -11,12 +11,12 @@ namespace TestProject.Database
         {
             return new List<Fuel>()
             {
-                new Fuel() { Id = Guid.NewGuid(), Name = "Combustivel.1", Type = FuelType.CommonGasoline },
-                new Fuel() { Id = Guid.NewGuid(), Name = "Combustivel.2", Type = FuelType.Diesel },
-                new Fuel() { Id = Guid.NewGuid(), Name = "Combustivel.3", Type = FuelType.AdditivatedGasoline },
-                new Fuel() { Id = Guid.NewGuid(), Name = "Combustivel.4", Type = FuelType.AdditivatedGasoline },
-                new Fuel() { Id = Guid.NewGuid(), Name = "Combustivel.5", Type = FuelType.CommonGasoline },
-                new Fuel() { Id = Guid.NewGuid(), Name = "Combustivel.6", Type = FuelType.Etanol},
+                new Fuel() { Id = Guid.NewGuid(), Name = "Combustível.1", Type = FuelType.CommonGasoline },
+                new Fuel() { Id = Guid.NewGuid(), Name = "Combustível.2", Type = FuelType.Diesel },
+                new Fuel() { Id = Guid.NewGuid(), Name = "Combustível.3", Type = FuelType.AdditivatedGasoline },
+                new Fuel() { Id = Guid.NewGuid(), Name = "Combustível.4", Type = FuelType.AdditivatedGasoline },
+                new Fuel() { Id = Guid.NewGuid(), Name = "Combustível.5", Type = FuelType.CommonGasoline },
+                new Fuel() { Id = Guid.NewGuid(), Name = "Combustível.6", Type = FuelType.Etanol},
             };
         }
 
