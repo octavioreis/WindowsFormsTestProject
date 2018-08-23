@@ -9,6 +9,7 @@ namespace TestProject.Controller.Interfaces
         void SelectItem(IdentifiedRegistry item);
 
         IFuelView GetFuelView();
+        ITankView GetTankView();
 
         void SetController(ItemsController controller);
     }

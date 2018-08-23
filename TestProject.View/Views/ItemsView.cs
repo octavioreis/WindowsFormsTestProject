@@ -34,6 +34,11 @@ namespace TestProject.View.Views
             return fuelView1;
         }
 
+        public ITankView GetTankView()
+        {
+            return tankView1;
+        }
+
         public void SelectItem(IdentifiedRegistry item)
         {
             lbItems.SelectedItem = item;

@@ -18,7 +18,7 @@ namespace TestProject.View.Views
             new FuelTypeObject(FuelType.Diesel, "Diesel")
         };
 
-        private FuelController _fuelController;
+        private FuelController _controller;
 
         public string FuelName
         {
@@ -41,7 +41,7 @@ namespace TestProject.View.Views
 
         public void SetController(FuelController controller)
         {
-            _fuelController = controller;
+            _controller = controller;
         }
 
         public void SetViewVisibility(bool visible)
@@ -51,7 +51,7 @@ namespace TestProject.View.Views
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            _fuelController.UpdateModel();
+            _controller.UpdateModel();
         }
     }
 }

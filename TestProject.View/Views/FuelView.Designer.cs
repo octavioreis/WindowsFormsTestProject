@@ -49,7 +49,6 @@
             this.tlpMain.Controls.Add(this.txtName, 1, 0);
             this.tlpMain.Controls.Add(this.cbType, 1, 1);
             this.tlpMain.Controls.Add(this.btnSave, 1, 3);
-            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 4;
@@ -99,7 +98,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Image = global::TestProject.View.Properties.Resources.save_icon;
             this.btnSave.Location = new System.Drawing.Point(265, 115);
             this.btnSave.Name = "btnSave";

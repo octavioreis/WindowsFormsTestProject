@@ -34,6 +34,9 @@
             this.txtCapacity = new System.Windows.Forms.TextBox();
             this.cbFuel = new System.Windows.Forms.ComboBox();
             this.btnGoToFuel = new System.Windows.Forms.Button();
+            this.lblName = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.tlpMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,18 +46,23 @@
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpMain.Controls.Add(this.lblCapacity, 0, 0);
-            this.tlpMain.Controls.Add(this.lblFuel, 0, 1);
-            this.tlpMain.Controls.Add(this.txtCapacity, 1, 0);
-            this.tlpMain.Controls.Add(this.cbFuel, 1, 1);
-            this.tlpMain.Controls.Add(this.btnGoToFuel, 2, 1);
+            this.tlpMain.Controls.Add(this.lblCapacity, 0, 1);
+            this.tlpMain.Controls.Add(this.lblFuel, 0, 2);
+            this.tlpMain.Controls.Add(this.txtCapacity, 1, 1);
+            this.tlpMain.Controls.Add(this.cbFuel, 1, 2);
+            this.tlpMain.Controls.Add(this.btnGoToFuel, 2, 2);
+            this.tlpMain.Controls.Add(this.lblName, 0, 0);
+            this.tlpMain.Controls.Add(this.txtName, 1, 0);
+            this.tlpMain.Controls.Add(this.btnSave, 2, 4);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
-            this.tlpMain.RowCount = 3;
+            this.tlpMain.RowCount = 5;
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.Size = new System.Drawing.Size(300, 150);
             this.tlpMain.TabIndex = 0;
             // 
@@ -62,7 +70,7 @@
             // 
             this.lblCapacity.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblCapacity.AutoSize = true;
-            this.lblCapacity.Location = new System.Drawing.Point(5, 6);
+            this.lblCapacity.Location = new System.Drawing.Point(5, 32);
             this.lblCapacity.Name = "lblCapacity";
             this.lblCapacity.Size = new System.Drawing.Size(64, 13);
             this.lblCapacity.TabIndex = 0;
@@ -72,7 +80,7 @@
             // 
             this.lblFuel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblFuel.AutoSize = true;
-            this.lblFuel.Location = new System.Drawing.Point(3, 36);
+            this.lblFuel.Location = new System.Drawing.Point(3, 62);
             this.lblFuel.Name = "lblFuel";
             this.lblFuel.Size = new System.Drawing.Size(66, 13);
             this.lblFuel.TabIndex = 1;
@@ -81,7 +89,7 @@
             // txtCapacity
             // 
             this.txtCapacity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCapacity.Location = new System.Drawing.Point(75, 3);
+            this.txtCapacity.Location = new System.Drawing.Point(75, 29);
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(184, 20);
             this.txtCapacity.TabIndex = 2;
@@ -90,7 +98,7 @@
             // 
             this.cbFuel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbFuel.FormattingEnabled = true;
-            this.cbFuel.Location = new System.Drawing.Point(75, 32);
+            this.cbFuel.Location = new System.Drawing.Point(75, 58);
             this.cbFuel.Name = "cbFuel";
             this.cbFuel.Size = new System.Drawing.Size(184, 21);
             this.cbFuel.TabIndex = 3;
@@ -99,11 +107,41 @@
             // 
             this.btnGoToFuel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnGoToFuel.Image = global::TestProject.View.Properties.Resources.next;
-            this.btnGoToFuel.Location = new System.Drawing.Point(265, 29);
+            this.btnGoToFuel.Location = new System.Drawing.Point(265, 55);
             this.btnGoToFuel.Name = "btnGoToFuel";
             this.btnGoToFuel.Size = new System.Drawing.Size(32, 28);
             this.btnGoToFuel.TabIndex = 4;
             this.btnGoToFuel.UseVisualStyleBackColor = true;
+            this.btnGoToFuel.Click += new System.EventHandler(this.btnGoToFuel_Click);
+            // 
+            // lblName
+            // 
+            this.lblName.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(34, 6);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.TabIndex = 5;
+            this.lblName.Text = "Name";
+            // 
+            // txtName
+            // 
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtName.Location = new System.Drawing.Point(75, 3);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(184, 20);
+            this.txtName.TabIndex = 6;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Image = global::TestProject.View.Properties.Resources.save_icon;
+            this.btnSave.Location = new System.Drawing.Point(265, 115);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(32, 32);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // TankView
             // 
@@ -126,5 +164,8 @@
         private System.Windows.Forms.TextBox txtCapacity;
         private System.Windows.Forms.ComboBox cbFuel;
         private System.Windows.Forms.Button btnGoToFuel;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Button btnSave;
     }
 }
