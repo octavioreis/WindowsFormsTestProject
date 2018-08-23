@@ -1,13 +1,13 @@
 ﻿using TestProject.Model.Enums;
 
-namespace TestProject.Controller.ModelWrappers
+namespace TestProject.Controller.ComboBoxOptions
 {
-    public class FuelTypeObject
+    public class FuelTypeOption
     {
         public FuelType Type;
         public string PreviewName;
 
-        public FuelTypeObject(FuelType type, string previewName)
+        public FuelTypeOption(FuelType type, string previewName)
         {
             Type = type;
             PreviewName = previewName;

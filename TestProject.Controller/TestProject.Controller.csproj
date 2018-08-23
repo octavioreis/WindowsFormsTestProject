@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractRegistryController.cs" />
+    <Compile Include="ComboBoxOptions\NoneOption.cs" />
     <Compile Include="FuelController.cs" />
     <Compile Include="Interfaces\IFuelView.cs" />
     <Compile Include="Interfaces\IItemsView.cs" />
@@ -51,7 +52,7 @@
     <Compile Include="Interfaces\ITankView.cs" />
     <Compile Include="ItemsController.cs" />
     <Compile Include="MainController.cs" />
-    <Compile Include="ModelWrappers\FuelTypeObject.cs" />
+    <Compile Include="ComboBoxOptions\FuelTypeOption.cs" />
     <Compile Include="NozzleController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TankController.cs" />

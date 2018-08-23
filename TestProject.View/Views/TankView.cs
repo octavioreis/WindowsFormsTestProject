@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using TestProject.Controller;
+using TestProject.Controller.ComboBoxOptions;
 using TestProject.Controller.Interfaces;
 using TestProject.Model;
 
@@ -10,6 +11,7 @@ namespace TestProject.View.Views
 {
     public partial class TankView : UserControl, ITankView
     {
+        private readonly NoneOption _comboBoxNoneOption = new NoneOption();
         private TankController _controller;
 
         public string TankName
@@ -27,7 +29,13 @@ namespace TestProject.View.Views
         public Fuel Fuel
         {
             get { return cbFuel.SelectedItem as Fuel; }
-            set { cbFuel.SelectedItem = value; }
+            set
+            {
+                if (value != null && cbFuel.Items.Contains(value))
+                    cbFuel.SelectedItem = value;
+                else
+                    cbFuel.SelectedItem = _comboBoxNoneOption;
+            }
         }
 
         public TankView()
@@ -43,6 +51,7 @@ namespace TestProject.View.Views
         public void SetFuelOptions(IEnumerable<Fuel> fuels)
         {
             cbFuel.Items.Clear();
+            cbFuel.Items.Add(_comboBoxNoneOption);
             cbFuel.Items.AddRange(fuels.ToArray());
         }
 

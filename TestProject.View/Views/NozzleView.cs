@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 using TestProject.Controller;
+using TestProject.Controller.ComboBoxOptions;
 using TestProject.Controller.Interfaces;
 using TestProject.Model;
 
@@ -9,6 +10,7 @@ namespace TestProject.View.Views
 {
     public partial class NozzleView : UserControl, INozzleView
     {
+        private readonly NoneOption _comboBoxNoneOption = new NoneOption();
         private NozzleController _controller;
 
         public string NozzleName
@@ -26,7 +28,13 @@ namespace TestProject.View.Views
         public Tank Tank
         {
             get { return cbTank.SelectedItem as Tank; }
-            set { cbTank.SelectedItem = value; }
+            set
+            {
+                if (value != null && cbTank.Items.Contains(value))
+                    cbTank.SelectedItem = value;
+                else
+                    cbTank.SelectedItem = _comboBoxNoneOption;
+            }
         }
 
         public NozzleView()
@@ -42,6 +50,7 @@ namespace TestProject.View.Views
         public void SetTankOptions(IEnumerable<Tank> tanks)
         {
             cbTank.Items.Clear();
+            cbTank.Items.Add(_comboBoxNoneOption);
             cbTank.Items.AddRange(tanks.ToArray());
         }
 

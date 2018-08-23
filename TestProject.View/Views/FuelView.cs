@@ -3,19 +3,19 @@ using System.Linq;
 using System.Windows.Forms;
 using TestProject.Controller;
 using TestProject.Controller.Interfaces;
-using TestProject.Controller.ModelWrappers;
+using TestProject.Controller.ComboBoxOptions;
 using TestProject.Model.Enums;
 
 namespace TestProject.View.Views
 {
     public partial class FuelView : UserControl, IFuelView
     {
-        private FuelTypeObject[] _fuelTypes = new FuelTypeObject[]
+        private FuelTypeOption[] _fuelTypes = new FuelTypeOption[]
         {
-            new FuelTypeObject(FuelType.CommonGasoline, "Gasolina Comum"),
-            new FuelTypeObject(FuelType.AdditivatedGasoline, "Gasolina Aditivada"),
-            new FuelTypeObject(FuelType.Etanol, "Etanol"),
-            new FuelTypeObject(FuelType.Diesel, "Diesel")
+            new FuelTypeOption(FuelType.CommonGasoline, "Gasolina Comum"),
+            new FuelTypeOption(FuelType.AdditivatedGasoline, "Gasolina Aditivada"),
+            new FuelTypeOption(FuelType.Etanol, "Etanol"),
+            new FuelTypeOption(FuelType.Diesel, "Diesel")
         };
 
         private FuelController _controller;
@@ -28,7 +28,7 @@ namespace TestProject.View.Views
 
         public FuelType FuelType
         {
-            get { return (cbType.SelectedItem as FuelTypeObject)?.Type ?? FuelType.CommonGasoline; }
+            get { return (cbType.SelectedItem as FuelTypeOption)?.Type ?? FuelType.CommonGasoline; }
             set { cbType.SelectedItem = _fuelTypes.FirstOrDefault(f => f.Type == value); }
         }
 

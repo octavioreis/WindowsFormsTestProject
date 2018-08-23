@@ -26,7 +26,7 @@ namespace TestProject.Database
             {
                 new Tank() { Id = Guid.NewGuid(), Name = "Tanque.1", StorageCapacity = "25.5", FuelId = fuels[2].Id },
                 new Tank() { Id = Guid.NewGuid(), Name = "Tanque.2", StorageCapacity = "50", FuelId = fuels[0].Id },
-                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.3", StorageCapacity = "37", FuelId = fuels[1].Id },
+                new Tank() { Id = Guid.NewGuid(), Name = "Tanque.3", StorageCapacity = "37" },
                 new Tank() { Id = Guid.NewGuid(), Name = "Tanque.4", StorageCapacity = "20", FuelId = fuels[5].Id },
                 new Tank() { Id = Guid.NewGuid(), Name = "Tanque.5", StorageCapacity = "35.7", FuelId = fuels[5].Id },
             };
@@ -38,7 +38,7 @@ namespace TestProject.Database
             {
                 new Nozzle() { Id = Guid.NewGuid(), Name = "Bico.1", SellingPrice = "4.05", TankId = tanks[2].Id },
                 new Nozzle() { Id = Guid.NewGuid(), Name = "Bico.2", SellingPrice = "3.65", TankId = tanks[3].Id },
-                new Nozzle() { Id = Guid.NewGuid(), Name = "Bico.3", SellingPrice = "4.57", TankId = tanks[0].Id },
+                new Nozzle() { Id = Guid.NewGuid(), Name = "Bico.3", SellingPrice = "4.57" },
             };
         }
     }

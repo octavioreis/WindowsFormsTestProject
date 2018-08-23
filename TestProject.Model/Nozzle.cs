@@ -6,6 +6,6 @@ namespace TestProject.Model
     {
         public string SellingPrice { get; set; }
 
-        public Guid TankId { get; set; }
+        public Guid? TankId { get; set; }
     }
 }
