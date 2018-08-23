@@ -53,5 +53,15 @@ namespace TestProject.View.Views
         {
             _controller.SelectedItemChanged(lbItems.SelectedItem as IdentifiedRegistry);
         }
+
+        private void btnAdd_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void btnRemove_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

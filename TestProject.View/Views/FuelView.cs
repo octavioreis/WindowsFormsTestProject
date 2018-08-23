@@ -28,7 +28,7 @@ namespace TestProject.View.Views
 
         public FuelType FuelType
         {
-            get { return (cbType.SelectedItem as FuelTypeObject).Type; }
+            get { return (cbType.SelectedItem as FuelTypeObject)?.Type ?? FuelType.CommonGasoline; }
             set { cbType.SelectedItem = _fuelTypes.FirstOrDefault(f => f.Type == value); }
         }
 

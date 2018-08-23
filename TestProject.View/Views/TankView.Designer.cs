@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.lblCapacity = new System.Windows.Forms.Label();
             this.lblFuel = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.tipSaveButton = new System.Windows.Forms.ToolTip(this.components);
             this.tlpMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,6 +142,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(32, 32);
             this.btnSave.TabIndex = 4;
+            this.tipSaveButton.SetToolTip(this.btnSave, "Salvar");
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -167,5 +170,6 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ToolTip tipSaveButton;
     }
 }

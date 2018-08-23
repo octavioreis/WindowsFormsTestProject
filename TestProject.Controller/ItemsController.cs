@@ -64,6 +64,11 @@ namespace TestProject.Controller
             LoadItems(items);
         }
 
+        public void RemoveItem(IdentifiedRegistry identifiedRegistry)
+        {
+
+        }
+
         public void SelectedItemChanged(IdentifiedRegistry identifiedRegistry)
         {
             if (identifiedRegistry is Fuel)
@@ -74,7 +79,7 @@ namespace TestProject.Controller
                 _nozzleController.SetNozzle(identifiedRegistry as Nozzle);
         }
 
-        public void LoadItems(IEnumerable<IdentifiedRegistry> items)
+        private void LoadItems(IEnumerable<IdentifiedRegistry> items)
         {
             _view.ClearList();
 
