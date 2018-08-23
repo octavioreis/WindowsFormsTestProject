@@ -11,6 +11,7 @@ namespace TestProject.Controller.Interfaces
         void SelectItem(IdentifiedRegistry item);
         void SelectItem(Guid id);
         void ShowErrorMessage(string message);
+        void UpdateSelectedItem();
 
         IFuelView GetFuelView();
         ITankView GetTankView();

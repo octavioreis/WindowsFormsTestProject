@@ -67,13 +67,27 @@ namespace TestProject.View.Views
             MessageBox.Show(message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
+        public void UpdateSelectedItem()
+        {
+            lbItems.Items[lbItems.SelectedIndex] = lbItems.Items[lbItems.SelectedIndex];
+        }
+
+        #endregion
+
+        #region Methods
+
+        private IdentifiedRegistry GetSelectedRegistry()
+        {
+            return lbItems.SelectedItem as IdentifiedRegistry;
+        }
+
         #endregion
 
         #region Control Events
 
         private void lbItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _controller.SelectedItemChanged(lbItems.SelectedItem as IdentifiedRegistry);
+            _controller.SelectedItemChanged(GetSelectedRegistry());
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -83,7 +97,7 @@ namespace TestProject.View.Views
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            _controller.RemoveItem(lbItems.SelectedItem as IdentifiedRegistry);
+            _controller.RemoveItem(GetSelectedRegistry());
         }
 
         #endregion

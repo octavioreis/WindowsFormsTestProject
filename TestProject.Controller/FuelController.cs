@@ -63,7 +63,7 @@ namespace TestProject.Controller
             SetSelectedFuel(identifiedRegistry as Fuel);
         }
 
-        private void SetSelectedFuel(Fuel fuel)
+        public void SetSelectedFuel(Fuel fuel)
         {
             _fuel = fuel;
             UpdateView();
@@ -73,6 +73,8 @@ namespace TestProject.Controller
         {
             _fuel.Name = _view.FuelName;
             _fuel.Type = _view.FuelType;
+
+            CallModelChanged();
         }
 
         public void UpdateView()

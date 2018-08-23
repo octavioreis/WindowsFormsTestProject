@@ -70,6 +70,8 @@ namespace TestProject.Controller
             _nozzle.Name = _view.NozzleName;
             _nozzle.SellingPrice = _view.SellingPrice;
             _nozzle.TankId = _view.Tank.Id;
+
+            CallModelChanged();
         }
 
         public void UpdateView()

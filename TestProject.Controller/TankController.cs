@@ -86,6 +86,8 @@ namespace TestProject.Controller
             _tank.Name = _view.TankName;
             _tank.StorageCapacity = _view.StorageCapacity;
             _tank.FuelId = _view.Fuel?.Id;
+
+            CallModelChanged();
         }
 
         public void UpdateView()

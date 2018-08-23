@@ -27,6 +27,10 @@ namespace TestProject.Controller
             _fuelController = new FuelController(view.GetFuelView(), database);
             _tankController = new TankController(view.GetTankView(), database);
             _nozzleController = new NozzleController(view.GetNozzleView(), database);
+
+            _fuelController.ModelChanged += ModelChanged;
+            _tankController.ModelChanged += ModelChanged;
+            _nozzleController.ModelChanged += ModelChanged;
         }
 
         public void AddItem()
@@ -64,6 +68,9 @@ namespace TestProject.Controller
 
         public void RemoveItem(IdentifiedRegistry identifiedRegistry)
         {
+            if (identifiedRegistry == null)
+                return;
+
             if (_currentController.TryRemoveItem(identifiedRegistry, out string errorMessage))
                 _view.RemoveItem(identifiedRegistry);
             else
@@ -101,6 +108,11 @@ namespace TestProject.Controller
             _fuelController.SetViewVisibility(fuelVisible);
             _tankController.SetViewVisibility(tankVisible);
             _nozzleController.SetViewVisibility(nozzleVisible);
+        }
+
+        private void ModelChanged(object sender, EventArgs e)
+        {
+            _view.UpdateSelectedItem();
         }
     }
 }
