@@ -39,6 +39,8 @@
             this.nudCapacity = new System.Windows.Forms.NumericUpDown();
             this.lblLiters = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.lblNozzlesAssociated = new System.Windows.Forms.Label();
+            this.lbNozzles = new System.Windows.Forms.ListBox();
             this.tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCapacity)).BeginInit();
             this.SuspendLayout();
@@ -57,16 +59,18 @@
             this.tlpMain.Controls.Add(this.txtName, 1, 0);
             this.tlpMain.Controls.Add(this.nudCapacity, 1, 1);
             this.tlpMain.Controls.Add(this.lblLiters, 2, 1);
+            this.tlpMain.Controls.Add(this.lblNozzlesAssociated, 1, 3);
+            this.tlpMain.Controls.Add(this.lbNozzles, 1, 4);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
-            this.tlpMain.RowCount = 4;
+            this.tlpMain.RowCount = 5;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.Size = new System.Drawing.Size(300, 150);
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMain.Size = new System.Drawing.Size(300, 196);
             this.tlpMain.TabIndex = 0;
             // 
             // lblCapacity
@@ -150,13 +154,34 @@
             this.lblLiters.TabIndex = 7;
             this.lblLiters.Text = "litros";
             // 
+            // lblNozzlesAssociated
+            // 
+            this.lblNozzlesAssociated.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblNozzlesAssociated.AutoSize = true;
+            this.lblNozzlesAssociated.Location = new System.Drawing.Point(72, 89);
+            this.lblNozzlesAssociated.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.lblNozzlesAssociated.Name = "lblNozzlesAssociated";
+            this.lblNozzlesAssociated.Size = new System.Drawing.Size(153, 13);
+            this.lblNozzlesAssociated.TabIndex = 8;
+            this.lblNozzlesAssociated.Text = "Bicos que utilizam este tanque:";
+            // 
+            // lbNozzles
+            // 
+            this.lbNozzles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbNozzles.FormattingEnabled = true;
+            this.lbNozzles.Location = new System.Drawing.Point(75, 109);
+            this.lbNozzles.Name = "lbNozzles";
+            this.lbNozzles.Size = new System.Drawing.Size(120, 82);
+            this.lbNozzles.TabIndex = 9;
+            // 
             // TankView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tlpMain);
             this.Name = "TankView";
-            this.Size = new System.Drawing.Size(300, 150);
+            this.Size = new System.Drawing.Size(300, 196);
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCapacity)).EndInit();
@@ -176,5 +201,7 @@
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.NumericUpDown nudCapacity;
         private System.Windows.Forms.Label lblLiters;
+        private System.Windows.Forms.Label lblNozzlesAssociated;
+        private System.Windows.Forms.ListBox lbNozzles;
     }
 }

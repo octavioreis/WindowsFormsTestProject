@@ -34,6 +34,8 @@
             this.lblType = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.cbType = new System.Windows.Forms.ComboBox();
+            this.lblTankAssociated = new System.Windows.Forms.Label();
+            this.lbTanks = new System.Windows.Forms.ListBox();
             this.tipSaveButton = new System.Windows.Forms.ToolTip(this.components);
             this.tlpMain.SuspendLayout();
             this.SuspendLayout();
@@ -47,14 +49,16 @@
             this.tlpMain.Controls.Add(this.lblType, 0, 1);
             this.tlpMain.Controls.Add(this.txtName, 1, 0);
             this.tlpMain.Controls.Add(this.cbType, 1, 1);
+            this.tlpMain.Controls.Add(this.lblTankAssociated, 1, 2);
+            this.tlpMain.Controls.Add(this.lbTanks, 1, 3);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
-            this.tlpMain.RowCount = 3;
+            this.tlpMain.RowCount = 4;
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMain.Size = new System.Drawing.Size(300, 150);
             this.tlpMain.TabIndex = 2;
             // 
@@ -95,6 +99,27 @@
             this.cbType.Size = new System.Drawing.Size(253, 21);
             this.cbType.TabIndex = 1;
             // 
+            // lblTankAssociated
+            // 
+            this.lblTankAssociated.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTankAssociated.AutoSize = true;
+            this.lblTankAssociated.Location = new System.Drawing.Point(41, 53);
+            this.lblTankAssociated.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.lblTankAssociated.Name = "lblTankAssociated";
+            this.lblTankAssociated.Size = new System.Drawing.Size(194, 13);
+            this.lblTankAssociated.TabIndex = 2;
+            this.lblTankAssociated.Text = "Tanques que utilizam este combustível:";
+            // 
+            // lbTanks
+            // 
+            this.lbTanks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbTanks.FormattingEnabled = true;
+            this.lbTanks.Location = new System.Drawing.Point(44, 69);
+            this.lbTanks.Name = "lbTanks";
+            this.lbTanks.Size = new System.Drawing.Size(120, 69);
+            this.lbTanks.TabIndex = 3;
+            // 
             // FuelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,5 +141,7 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.ToolTip tipSaveButton;
+        private System.Windows.Forms.Label lblTankAssociated;
+        private System.Windows.Forms.ListBox lbTanks;
     }
 }

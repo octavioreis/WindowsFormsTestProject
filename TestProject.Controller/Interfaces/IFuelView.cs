@@ -1,4 +1,6 @@
-﻿using TestProject.Model.Enums;
+﻿using System.Collections.Generic;
+using TestProject.Model;
+using TestProject.Model.Enums;
 
 namespace TestProject.Controller.Interfaces
 {
@@ -6,5 +8,7 @@ namespace TestProject.Controller.Interfaces
     {
         string FuelName { get; set; }
         FuelType FuelType { get; set; }
+
+        void SetTanksUsingFuel(IEnumerable<Tank> tanks);
     }
 }

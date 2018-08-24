@@ -32,6 +32,7 @@ namespace TestProject.Controller
 
         public override void UpdateView()
         {
+            _view.SetTanksUsingFuel(_database.GetTanksUsingFuel(_fuel.Id));
             _view.FuelName = _fuel.Name;
             _view.FuelType = _fuel.Type;
         }

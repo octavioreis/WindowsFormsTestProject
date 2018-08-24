@@ -55,6 +55,14 @@ namespace TestProject.View.Views
             cbFuel.Items.AddRange(fuels.ToArray());
         }
 
+        public void SetNozzlesUsingTank(IEnumerable<Nozzle> nozzles)
+        {
+            lbNozzles.Items.Clear();
+
+            foreach (var nozzle in nozzles)
+                lbNozzles.Items.Add(nozzle);
+        }
+
         public void SetViewVisibility(bool visible)
         {
             Visible = visible;

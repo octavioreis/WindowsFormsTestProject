@@ -1,8 +1,10 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using TestProject.Common;
 using TestProject.Controller.ComboBoxOptions;
 using TestProject.Controller.Interfaces;
+using TestProject.Model;
 using TestProject.Model.Enums;
 
 namespace TestProject.View.Views
@@ -34,6 +36,14 @@ namespace TestProject.View.Views
             InitializeComponent();
 
             cbType.Items.AddRange(_fuelTypes);
+        }
+
+        public void SetTanksUsingFuel(IEnumerable<Tank> tanks)
+        {
+            lbTanks.Items.Clear();
+
+            foreach (var tank in tanks)
+                lbTanks.Items.Add(tank);
         }
 
         public void SetViewVisibility(bool visible)

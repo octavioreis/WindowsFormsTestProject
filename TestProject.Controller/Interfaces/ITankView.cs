@@ -10,6 +10,8 @@ namespace TestProject.Controller.Interfaces
         Fuel Fuel { get; set; }
 
         void SetFuelOptions(IEnumerable<Fuel> fuels);
+        void SetNozzlesUsingTank(IEnumerable<Nozzle> nozzles);
+
         void SetController(TankController controller);
     }
 }

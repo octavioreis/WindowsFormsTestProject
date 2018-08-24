@@ -31,12 +31,6 @@ namespace TestProject.Controller
             return "Salvar alterações no tanque (Ctrl+S)";
         }
 
-        public override void UpdateViewItem(IdentifiedRegistry identifiedRegistry)
-        {
-            _tank = identifiedRegistry as Tank;
-            UpdateView();
-        }
-
         public override void SetViewVisibility(bool visible)
         {
             if (visible)
@@ -48,8 +42,15 @@ namespace TestProject.Controller
             base.SetViewVisibility(visible);
         }
 
+        public override void UpdateViewItem(IdentifiedRegistry identifiedRegistry)
+        {
+            _tank = identifiedRegistry as Tank;
+            UpdateView();
+        }
+
         public override void UpdateView()
         {
+            _view.SetNozzlesUsingTank(_database.GetNozzlesUsingTank(_tank.Id));
             _view.TankName = _tank.Name;
             _view.StorageCapacity = _tank.StorageCapacity;
             _view.Fuel = _fuels.FirstOrDefault(f => f.Id == _tank.FuelId);
