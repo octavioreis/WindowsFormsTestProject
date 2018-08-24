@@ -37,8 +37,8 @@
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.tipSaveButton = new System.Windows.Forms.ToolTip(this.components);
             this.nudSellingPrice = new System.Windows.Forms.NumericUpDown();
+            this.tipSaveButton = new System.Windows.Forms.ToolTip(this.components);
             this.tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSellingPrice)).BeginInit();
             this.SuspendLayout();
@@ -135,7 +135,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(32, 32);
             this.btnSave.TabIndex = 4;
-            this.tipSaveButton.SetToolTip(this.btnSave, "Salvar");
+            this.tipSaveButton.SetToolTip(this.btnSave, "Salvar alterações no bico");
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
