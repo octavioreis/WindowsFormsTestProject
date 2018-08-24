@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.lbItems = new System.Windows.Forms.ListBox();
             this.fuelView1 = new TestProject.View.Views.FuelView();
             this.nozzleView1 = new TestProject.View.Views.NozzleView();
             this.tankView1 = new TestProject.View.Views.TankView();
             this.tlpItemsList = new System.Windows.Forms.TableLayoutPanel();
+            this.lbItems = new System.Windows.Forms.ListBox();
             this.tlpListOptions = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tlpMain.SuspendLayout();
             this.tlpItemsList.SuspendLayout();
             this.tlpListOptions.SuspendLayout();
@@ -61,16 +63,6 @@
             this.tlpMain.Size = new System.Drawing.Size(718, 532);
             this.tlpMain.TabIndex = 0;
             // 
-            // lbItems
-            // 
-            this.lbItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbItems.FormattingEnabled = true;
-            this.lbItems.Location = new System.Drawing.Point(3, 3);
-            this.lbItems.Name = "lbItems";
-            this.lbItems.Size = new System.Drawing.Size(180, 465);
-            this.lbItems.TabIndex = 0;
-            this.lbItems.SelectedIndexChanged += new System.EventHandler(this.lbItems_SelectedIndexChanged);
-            // 
             // fuelView1
             // 
             this.fuelView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -88,7 +80,7 @@
             this.nozzleView1.Location = new System.Drawing.Point(195, 515);
             this.nozzleView1.Name = "nozzleView1";
             this.nozzleView1.NozzleName = "";
-            this.nozzleView1.SellingPrice = 0f;
+            this.nozzleView1.SellingPrice = 0F;
             this.nozzleView1.Size = new System.Drawing.Size(520, 14);
             this.nozzleView1.TabIndex = 1;
             this.nozzleView1.Tank = null;
@@ -101,7 +93,7 @@
             this.tankView1.Location = new System.Drawing.Point(3, 515);
             this.tankView1.Name = "tankView1";
             this.tankView1.Size = new System.Drawing.Size(186, 14);
-            this.tankView1.StorageCapacity = 0f;
+            this.tankView1.StorageCapacity = 0F;
             this.tankView1.TabIndex = 2;
             this.tankView1.TankName = "";
             this.tankView1.Visible = false;
@@ -121,6 +113,16 @@
             this.tlpItemsList.Size = new System.Drawing.Size(186, 506);
             this.tlpItemsList.TabIndex = 3;
             // 
+            // lbItems
+            // 
+            this.lbItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbItems.FormattingEnabled = true;
+            this.lbItems.Location = new System.Drawing.Point(3, 3);
+            this.lbItems.Name = "lbItems";
+            this.lbItems.Size = new System.Drawing.Size(180, 456);
+            this.lbItems.TabIndex = 0;
+            this.lbItems.SelectedIndexChanged += new System.EventHandler(this.lbItems_SelectedIndexChanged);
+            // 
             // tlpListOptions
             // 
             this.tlpListOptions.AutoSize = true;
@@ -132,32 +134,40 @@
             this.tlpListOptions.Controls.Add(this.btnAdd, 0, 0);
             this.tlpListOptions.Controls.Add(this.btnRemove, 2, 0);
             this.tlpListOptions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpListOptions.Location = new System.Drawing.Point(3, 474);
+            this.tlpListOptions.Location = new System.Drawing.Point(3, 465);
             this.tlpListOptions.Name = "tlpListOptions";
             this.tlpListOptions.RowCount = 1;
             this.tlpListOptions.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpListOptions.Size = new System.Drawing.Size(180, 29);
+            this.tlpListOptions.Size = new System.Drawing.Size(180, 38);
             this.tlpListOptions.TabIndex = 1;
             // 
             // btnAdd
             // 
             this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Image = global::TestProject.View.Properties.Resources.add;
             this.btnAdd.Location = new System.Drawing.Point(3, 3);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(32, 32);
             this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Adicionar";
+            this.toolTip.SetToolTip(this.btnAdd, "Adicionar");
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnRemove
             // 
             this.btnRemove.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnRemove.Location = new System.Drawing.Point(102, 3);
+            this.btnRemove.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnRemove.FlatAppearance.BorderSize = 0;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Image = global::TestProject.View.Properties.Resources.remove;
+            this.btnRemove.Location = new System.Drawing.Point(145, 3);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.Size = new System.Drawing.Size(32, 32);
             this.btnRemove.TabIndex = 1;
-            this.btnRemove.Text = "Remover";
+            this.toolTip.SetToolTip(this.btnRemove, "Remover");
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
@@ -187,5 +197,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpListOptions;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

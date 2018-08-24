@@ -100,6 +100,8 @@
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Image = global::TestProject.View.Properties.Resources.save_icon;
             this.btnSave.Location = new System.Drawing.Point(265, 115);
             this.btnSave.Name = "btnSave";
