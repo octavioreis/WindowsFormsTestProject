@@ -47,12 +47,15 @@ namespace TestProject.Controller
             LoadItems(_currentCollectionManager.GetItems());
         }
 
-        public void RemoveItem(IdentifiedRegistry identifiedRegistry)
+        public bool TryRemoveItem(IdentifiedRegistry identifiedRegistry, out string message)
         {
-            if (_currentCollectionManager.TryRemoveItem(identifiedRegistry, out string errorMessage))
+            if (_currentCollectionManager.TryRemoveItem(identifiedRegistry, out message))
+            {
                 _view.RemoveItem(identifiedRegistry);
-            else
-                _view.ShowWarningMessage(errorMessage);
+                return true;
+            }
+
+            return false;
         }
 
         public void SelectItem(Guid id)

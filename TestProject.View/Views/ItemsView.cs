@@ -53,11 +53,6 @@ namespace TestProject.View.Views
             lbItems.SelectedItem = item;
         }
 
-        public void ShowWarningMessage(string message)
-        {
-            MessageBox.Show(message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        }
-
         public void UpdateSelectedItem()
         {
             lbItems.Items[lbItems.SelectedIndex] = lbItems.Items[lbItems.SelectedIndex];
@@ -93,10 +88,12 @@ namespace TestProject.View.Views
                 return;
 
             var message = $"Deseja remover o item \"{selectedRegistry.Name}\"?";
-            var title = "Atenção";
+            var title = "Remover";
+            if (MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                return;
 
-            if (MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-                _controller.RemoveItem(selectedRegistry);
+            if (!_controller.TryRemoveItem(selectedRegistry, out string errorMessage))
+                MessageBox.Show(errorMessage, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         #endregion

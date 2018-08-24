@@ -10,7 +10,6 @@ namespace TestProject.Controller.Interfaces
         void RemoveItem(IdentifiedRegistry item);
         void SelectItem(Guid id);
         void SelectItem(IdentifiedRegistry item);
-        void ShowWarningMessage(string message);
         void UpdateSelectedItem();
 
         IRegistryHostView GetRegistryHostView();
