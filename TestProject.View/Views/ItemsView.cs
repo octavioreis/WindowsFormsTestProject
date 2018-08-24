@@ -98,7 +98,15 @@ namespace TestProject.View.Views
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            _controller.RemoveItem(GetSelectedRegistry());
+            var selectedRegistry = GetSelectedRegistry();
+            if (selectedRegistry == null)
+                return;
+
+            var message = $"Deseja remover o item \"{selectedRegistry.Name}\"";
+            var title = "Atenção";
+
+            if (MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                _controller.RemoveItem(selectedRegistry);
         }
 
         #endregion

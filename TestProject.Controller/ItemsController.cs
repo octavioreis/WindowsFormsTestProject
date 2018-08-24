@@ -66,9 +66,6 @@ namespace TestProject.Controller
 
         public void RemoveItem(IdentifiedRegistry identifiedRegistry)
         {
-            if (identifiedRegistry == null)
-                return;
-
             if (_currentController.TryRemoveItem(identifiedRegistry, out string errorMessage))
                 _view.RemoveItem(identifiedRegistry);
             else
