@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{808DFF30-D534-4BF9-9FA4-4E0FC060B8A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.Database", "TestProject.DataManager\TestProject.Database.csproj", "{9F59627A-7F53-4E09-8EE8-7B9B84627F38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.Database", "TestProject.Database\TestProject.Database.csproj", "{9F59627A-7F53-4E09-8EE8-7B9B84627F38}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.Model", "TestProject.Model\TestProject.Model.csproj", "{E5FDEB97-5E6A-4362-B197-553F99FDCC5C}"
 EndProject
@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.Controller", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.ReportGenerator", "TestProject.ReportGenerator\TestProject.ReportGenerator.csproj", "{9E5CCA9C-4E04-4484-BB85-E798564AE72F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.Globalization", "TestProject.Translator\TestProject.Globalization.csproj", "{841A36F9-E864-4403-B7B0-7EA09B215A20}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.Globalization", "TestProject.Globalization\TestProject.Globalization.csproj", "{841A36F9-E864-4403-B7B0-7EA09B215A20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
