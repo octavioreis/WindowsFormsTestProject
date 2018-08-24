@@ -10,12 +10,10 @@ namespace TestProject.Controller.Interfaces
         void RemoveItem(IdentifiedRegistry item);
         void SelectItem(Guid id);
         void SelectItem(IdentifiedRegistry item);
-        void ShowErrorMessage(string message);
+        void ShowWarningMessage(string message);
         void UpdateSelectedItem();
 
-        IFuelView GetFuelView();
-        ITankView GetTankView();
-        INozzleView GetNozzleView();
+        ISaveView GetSaveView();
 
         void SetController(ItemsController controller);
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using TestProject.Controller.Interfaces;
+using TestProject.Controller.CollectionManagers;
 using TestProject.Database;
 using TestProject.Model;
 using TestProject.Model.Enums;
@@ -11,10 +12,11 @@ namespace TestProject.Controller
     public class ItemsController
     {
         private readonly IItemsView _view;
-        private readonly FuelController _fuelController;
-        private readonly TankController _tankController;
-        private readonly NozzleController _nozzleController;
-        private AbstractRegistryController _currentController;
+        private readonly SaveController _saveController;
+        private readonly FuelCollectionManager _fuelCollectionManager;
+        private readonly TankCollectionManager _tankCollectionManager;
+        private readonly NozzleCollectionManager _nozzleCollectionManager;
+        private AbstractCollectionManager _currentCollectionManager;
 
         public ItemsController(IItemsView view, IDatabase database, INavigator navigator)
         {
@@ -22,18 +24,12 @@ namespace TestProject.Controller
 
             view.SetController(this);
 
-            _fuelController = new FuelController(view.GetFuelView(), database);
-            _tankController = new TankController(view.GetTankView(), database, navigator);
-            _nozzleController = new NozzleController(view.GetNozzleView(), database, navigator);
-
-            _fuelController.ModelChanged += ModelChanged;
-            _tankController.ModelChanged += ModelChanged;
-            _nozzleController.ModelChanged += ModelChanged;
+            _saveController = new SaveController(view.GetSaveView(), database, navigator, ModelChanged);
         }
 
         public void AddItem()
         {
-            var newItem = _currentController.AddItem();
+            var newItem = _currentCollectionManager.AddItem();
 
             _view.AddItem(newItem);
             _view.SelectItem(newItem);
@@ -41,35 +37,18 @@ namespace TestProject.Controller
 
         public void LoadItems(RegistryType registryType)
         {
-            switch (registryType)
-            {
-                case RegistryType.Fuel:
-                    UpdateViewsVisibility(true, false, false);
-                    _currentController = _fuelController;
-                    break;
-                case RegistryType.Tank:
-                    UpdateViewsVisibility(false, true, false);
-                    _currentController = _tankController;
-                    break;
-                case RegistryType.Nozzle:
-                    UpdateViewsVisibility(false, false, true);
-                    _currentController = _nozzleController;
-                    break;
-                default:
-                    UpdateViewsVisibility(false, false, false);
-                    _currentController = null;
-                    break;
-            }
+            _saveController.SetCurrentController(registryType);
+            SetCurrentCollectionManager(registryType);
 
-            LoadItems(_currentController?.GetItems());
+            LoadItems(_currentCollectionManager.GetItems());
         }
 
         public void RemoveItem(IdentifiedRegistry identifiedRegistry)
         {
-            if (_currentController.TryRemoveItem(identifiedRegistry, out string errorMessage))
+            if (_currentCollectionManager.TryRemoveItem(identifiedRegistry, out string errorMessage))
                 _view.RemoveItem(identifiedRegistry);
             else
-                _view.ShowErrorMessage(errorMessage);
+                _view.ShowWarningMessage(errorMessage);
         }
 
         public void SelectItem(Guid id)
@@ -77,25 +56,14 @@ namespace TestProject.Controller
             _view.SelectItem(id);
         }
 
-        public void UpdateRegistryViewInformation(IdentifiedRegistry identifiedRegistry)
+        public void UpdateRegistryViewItem(IdentifiedRegistry identifiedRegistry)
         {
-            if (identifiedRegistry == null)
-            {
-                _currentController.SetViewVisibility(false);
-                return;
-            }
-            else
-                _currentController.SetViewVisibility(true);
-
-            _currentController.SetSelectedItem(identifiedRegistry);
+            _saveController.UpdateViewItem(identifiedRegistry);
         }
 
         private void LoadItems(IEnumerable<IdentifiedRegistry> items)
         {
             _view.ClearList();
-
-            if (items == null)
-                return;
 
             foreach (var item in items)
                 _view.AddItem(item);
@@ -103,11 +71,22 @@ namespace TestProject.Controller
             _view.SelectItem(items.FirstOrDefault());
         }
 
-        private void UpdateViewsVisibility(bool fuelVisible, bool tankVisible, bool nozzleVisible)
+        private void SetCurrentCollectionManager(RegistryType registryType)
         {
-            _fuelController.SetViewVisibility(fuelVisible);
-            _tankController.SetViewVisibility(tankVisible);
-            _nozzleController.SetViewVisibility(nozzleVisible);
+            switch (registryType)
+            {
+                case RegistryType.Fuel:
+                    _currentCollectionManager = _fuelCollectionManager;
+                    break;
+
+                case RegistryType.Tank:
+                    _currentCollectionManager = _tankCollectionManager;
+                    break;
+
+                case RegistryType.Nozzle:
+                    _currentCollectionManager = _nozzleCollectionManager;
+                    break;
+            }
         }
 
         private void ModelChanged(object sender, EventArgs e)

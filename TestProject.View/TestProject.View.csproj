@@ -73,6 +73,12 @@
     <Compile Include="Views\NozzleView.Designer.cs">
       <DependentUpon>NozzleView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SaveView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SaveView.Designer.cs">
+      <DependentUpon>SaveView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\TankView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NozzleView.resx">
       <DependentUpon>NozzleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SaveView.resx">
+      <DependentUpon>SaveView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TankView.resx">
       <DependentUpon>TankView.cs</DependentUpon>

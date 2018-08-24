@@ -1,11 +1,9 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows.Forms;
-using TestProject.Controller;
-using TestProject.Controller.Interfaces;
 using TestProject.Controller.ComboBoxOptions;
-using TestProject.Model.Enums;
+using TestProject.Controller.Interfaces;
 using TestProject.Globalization;
+using TestProject.Model.Enums;
 
 namespace TestProject.View.Views
 {
@@ -18,8 +16,6 @@ namespace TestProject.View.Views
             new FuelTypeOption(FuelType.Ethanol, Translator.Translate(FuelType.Ethanol.ToString())),
             new FuelTypeOption(FuelType.Diesel, Translator.Translate(FuelType.Diesel.ToString()))
         };
-
-        private FuelController _controller;
 
         public string FuelName
         {
@@ -40,36 +36,9 @@ namespace TestProject.View.Views
             cbType.Items.AddRange(_fuelTypes);
         }
 
-        public void SetController(FuelController controller)
-        {
-            _controller = controller;
-        }
-
         public void SetViewVisibility(bool visible)
         {
             Visible = visible;
-        }
-
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            if (keyData == (Keys.Control | Keys.S))
-            {
-                UpdateModel();
-                return true;
-            }
-
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
-
-        private void UpdateModel()
-        {
-            if (!_controller.TryUpdateModel(out string message))
-                MessageBox.Show(message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            UpdateModel();
         }
     }
 }

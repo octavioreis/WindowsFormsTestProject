@@ -36,10 +36,9 @@
             this.btnGoToFuel = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.nudCapacity = new System.Windows.Forms.NumericUpDown();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.lblLiters = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCapacity)).BeginInit();
             this.SuspendLayout();
@@ -56,18 +55,17 @@
             this.tlpMain.Controls.Add(this.btnGoToFuel, 2, 2);
             this.tlpMain.Controls.Add(this.lblName, 0, 0);
             this.tlpMain.Controls.Add(this.txtName, 1, 0);
-            this.tlpMain.Controls.Add(this.btnSave, 2, 4);
             this.tlpMain.Controls.Add(this.nudCapacity, 1, 1);
             this.tlpMain.Controls.Add(this.lblLiters, 2, 1);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
-            this.tlpMain.RowCount = 5;
+            this.tlpMain.RowCount = 4;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMain.Size = new System.Drawing.Size(300, 150);
             this.tlpMain.TabIndex = 0;
             // 
@@ -110,6 +108,7 @@
             this.btnGoToFuel.Name = "btnGoToFuel";
             this.btnGoToFuel.Size = new System.Drawing.Size(32, 28);
             this.btnGoToFuel.TabIndex = 3;
+            this.btnGoToFuel.TabStop = false;
             this.toolTip.SetToolTip(this.btnGoToFuel, "Ir até combustível");
             this.btnGoToFuel.UseVisualStyleBackColor = true;
             this.btnGoToFuel.Click += new System.EventHandler(this.btnGoToFuel_Click);
@@ -132,20 +131,6 @@
             this.txtName.Size = new System.Drawing.Size(184, 20);
             this.txtName.TabIndex = 0;
             // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Image = global::TestProject.View.Properties.Resources.save_icon;
-            this.btnSave.Location = new System.Drawing.Point(265, 115);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(32, 32);
-            this.btnSave.TabIndex = 4;
-            this.toolTip.SetToolTip(this.btnSave, "Salvar alterações no tanque (Ctrl+S)");
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // nudCapacity
             // 
             this.nudCapacity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -153,7 +138,7 @@
             this.nudCapacity.Location = new System.Drawing.Point(75, 29);
             this.nudCapacity.Name = "nudCapacity";
             this.nudCapacity.Size = new System.Drawing.Size(184, 20);
-            this.nudCapacity.TabIndex = 6;
+            this.nudCapacity.TabIndex = 1;
             // 
             // lblLiters
             // 
@@ -188,7 +173,6 @@
         private System.Windows.Forms.Button btnGoToFuel;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.NumericUpDown nudCapacity;
         private System.Windows.Forms.Label lblLiters;

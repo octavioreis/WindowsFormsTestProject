@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using TestProject.Controller.Interfaces;
 using TestProject.Model;
 
@@ -15,11 +14,8 @@ namespace TestProject.Controller
             _view = view;
         }
 
-        public abstract IdentifiedRegistry AddItem();
-        public abstract IdentifiedRegistry GetItem(Guid id);
-        public abstract IEnumerable<IdentifiedRegistry> GetItems();
-        public abstract void SetSelectedItem(IdentifiedRegistry identifiedRegistry);
-        public abstract bool TryRemoveItem(IdentifiedRegistry identifiedRegistry, out string message);
+        public abstract string GetSaveButtonTooltip();
+        public abstract void UpdateViewItem(IdentifiedRegistry identifiedRegistry);
         public abstract void UpdateView();
         protected abstract void UpdateModel();
         protected abstract bool ValidateFields(out string message);
@@ -34,15 +30,12 @@ namespace TestProject.Controller
             if (ValidateFields(out message))
             {
                 UpdateModel();
+                ModelChanged?.Invoke(this, EventArgs.Empty);
+
                 return true;
             }
-            else
-                return false;
-        }
 
-        protected void CallModelChanged()
-        {
-            ModelChanged?.Invoke(this, EventArgs.Empty);
+            return false;
         }
     }
 }

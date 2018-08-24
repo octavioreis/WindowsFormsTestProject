@@ -30,14 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.fuelView1 = new TestProject.View.Views.FuelView();
-            this.nozzleView1 = new TestProject.View.Views.NozzleView();
-            this.tankView1 = new TestProject.View.Views.TankView();
             this.tlpItemsList = new System.Windows.Forms.TableLayoutPanel();
             this.lbItems = new System.Windows.Forms.ListBox();
             this.tlpListOptions = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.saveView = new TestProject.View.Views.SaveView();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tlpMain.SuspendLayout();
             this.tlpItemsList.SuspendLayout();
@@ -50,53 +48,16 @@
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.83333F));
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.16667F));
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.Controls.Add(this.fuelView1, 1, 0);
-            this.tlpMain.Controls.Add(this.nozzleView1, 1, 0);
-            this.tlpMain.Controls.Add(this.tankView1, 1, 0);
             this.tlpMain.Controls.Add(this.tlpItemsList, 0, 0);
+            this.tlpMain.Controls.Add(this.saveView, 1, 0);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 1;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.Size = new System.Drawing.Size(718, 532);
+            this.tlpMain.Size = new System.Drawing.Size(598, 338);
             this.tlpMain.TabIndex = 0;
-            // 
-            // fuelView1
-            // 
-            this.fuelView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fuelView1.FuelName = "";
-            this.fuelView1.FuelType = TestProject.Model.Enums.FuelType.CommonGasoline;
-            this.fuelView1.Location = new System.Drawing.Point(195, 3);
-            this.fuelView1.Name = "fuelView1";
-            this.fuelView1.Size = new System.Drawing.Size(520, 506);
-            this.fuelView1.TabIndex = 0;
-            this.fuelView1.Visible = false;
-            // 
-            // nozzleView1
-            // 
-            this.nozzleView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nozzleView1.Location = new System.Drawing.Point(195, 515);
-            this.nozzleView1.Name = "nozzleView1";
-            this.nozzleView1.NozzleName = "";
-            this.nozzleView1.SellingPrice = 0F;
-            this.nozzleView1.Size = new System.Drawing.Size(520, 14);
-            this.nozzleView1.TabIndex = 1;
-            this.nozzleView1.Tank = null;
-            this.nozzleView1.Visible = false;
-            // 
-            // tankView1
-            // 
-            this.tankView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tankView1.Fuel = null;
-            this.tankView1.Location = new System.Drawing.Point(3, 515);
-            this.tankView1.Name = "tankView1";
-            this.tankView1.Size = new System.Drawing.Size(186, 14);
-            this.tankView1.StorageCapacity = 0F;
-            this.tankView1.TabIndex = 2;
-            this.tankView1.TankName = "";
-            this.tankView1.Visible = false;
             // 
             // tlpItemsList
             // 
@@ -110,7 +71,7 @@
             this.tlpItemsList.RowCount = 2;
             this.tlpItemsList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpItemsList.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpItemsList.Size = new System.Drawing.Size(186, 506);
+            this.tlpItemsList.Size = new System.Drawing.Size(154, 332);
             this.tlpItemsList.TabIndex = 3;
             // 
             // lbItems
@@ -119,8 +80,9 @@
             this.lbItems.FormattingEnabled = true;
             this.lbItems.Location = new System.Drawing.Point(3, 3);
             this.lbItems.Name = "lbItems";
-            this.lbItems.Size = new System.Drawing.Size(180, 456);
+            this.lbItems.Size = new System.Drawing.Size(148, 282);
             this.lbItems.TabIndex = 0;
+            this.lbItems.TabStop = false;
             this.lbItems.SelectedIndexChanged += new System.EventHandler(this.lbItems_SelectedIndexChanged);
             // 
             // tlpListOptions
@@ -134,11 +96,11 @@
             this.tlpListOptions.Controls.Add(this.btnAdd, 0, 0);
             this.tlpListOptions.Controls.Add(this.btnRemove, 2, 0);
             this.tlpListOptions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpListOptions.Location = new System.Drawing.Point(3, 465);
+            this.tlpListOptions.Location = new System.Drawing.Point(3, 291);
             this.tlpListOptions.Name = "tlpListOptions";
             this.tlpListOptions.RowCount = 1;
             this.tlpListOptions.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpListOptions.Size = new System.Drawing.Size(180, 38);
+            this.tlpListOptions.Size = new System.Drawing.Size(148, 38);
             this.tlpListOptions.TabIndex = 1;
             // 
             // btnAdd
@@ -152,6 +114,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(32, 32);
             this.btnAdd.TabIndex = 0;
+            this.btnAdd.TabStop = false;
             this.toolTip.SetToolTip(this.btnAdd, "Adicionar");
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -163,13 +126,22 @@
             this.btnRemove.FlatAppearance.BorderSize = 0;
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Image = global::TestProject.View.Properties.Resources.remove;
-            this.btnRemove.Location = new System.Drawing.Point(145, 3);
+            this.btnRemove.Location = new System.Drawing.Point(113, 3);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(32, 32);
             this.btnRemove.TabIndex = 1;
+            this.btnRemove.TabStop = false;
             this.toolTip.SetToolTip(this.btnRemove, "Remover");
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // saveView
+            // 
+            this.saveView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.saveView.Location = new System.Drawing.Point(163, 3);
+            this.saveView.Name = "saveView";
+            this.saveView.Size = new System.Drawing.Size(432, 332);
+            this.saveView.TabIndex = 4;
             // 
             // ItemsView
             // 
@@ -177,7 +149,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tlpMain);
             this.Name = "ItemsView";
-            this.Size = new System.Drawing.Size(718, 532);
+            this.Size = new System.Drawing.Size(598, 338);
             this.tlpMain.ResumeLayout(false);
             this.tlpItemsList.ResumeLayout(false);
             this.tlpItemsList.PerformLayout();
@@ -190,13 +162,11 @@
 
         private System.Windows.Forms.TableLayoutPanel tlpMain;
         private System.Windows.Forms.ListBox lbItems;
-        private FuelView fuelView1;
-        private NozzleView nozzleView1;
-        private TankView tankView1;
         private System.Windows.Forms.TableLayoutPanel tlpItemsList;
         private System.Windows.Forms.TableLayoutPanel tlpListOptions;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.ToolTip toolTip;
+        private SaveView saveView;
     }
 }

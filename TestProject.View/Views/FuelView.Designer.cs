@@ -34,7 +34,6 @@
             this.lblType = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.cbType = new System.Windows.Forms.ComboBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.tipSaveButton = new System.Windows.Forms.ToolTip(this.components);
             this.tlpMain.SuspendLayout();
             this.SuspendLayout();
@@ -48,15 +47,14 @@
             this.tlpMain.Controls.Add(this.lblType, 0, 1);
             this.tlpMain.Controls.Add(this.txtName, 1, 0);
             this.tlpMain.Controls.Add(this.cbType, 1, 1);
-            this.tlpMain.Controls.Add(this.btnSave, 1, 3);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
-            this.tlpMain.RowCount = 4;
+            this.tlpMain.RowCount = 3;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMain.Size = new System.Drawing.Size(300, 150);
             this.tlpMain.TabIndex = 2;
             // 
@@ -86,7 +84,7 @@
             this.txtName.Location = new System.Drawing.Point(44, 3);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(253, 20);
-            this.txtName.TabIndex = 2;
+            this.txtName.TabIndex = 0;
             // 
             // cbType
             // 
@@ -95,21 +93,7 @@
             this.cbType.Location = new System.Drawing.Point(44, 29);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(253, 21);
-            this.cbType.TabIndex = 3;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Image = global::TestProject.View.Properties.Resources.save_icon;
-            this.btnSave.Location = new System.Drawing.Point(265, 115);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(32, 32);
-            this.btnSave.TabIndex = 5;
-            this.tipSaveButton.SetToolTip(this.btnSave, "Salvar alterações no combustível (Ctrl+S)");
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.cbType.TabIndex = 1;
             // 
             // FuelView
             // 
@@ -131,7 +115,6 @@
         private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.ComboBox cbType;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ToolTip tipSaveButton;
     }
 }

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using TestProject.Controller.Interfaces;
 using TestProject.Database;
 using TestProject.Model;
@@ -27,49 +25,12 @@ namespace TestProject.Controller
 
         #region AbstractRegistryController Members
 
-        public override IdentifiedRegistry AddItem()
+        public override string GetSaveButtonTooltip()
         {
-            var newTank = _database.CreateEmptyTank();
-            _database.AddTank(newTank);
-
-            return newTank;
+            return "Salvar alterações no tanque (Ctrl+S)";
         }
 
-        public override IdentifiedRegistry GetItem(Guid id)
-        {
-            return _database.GetTank(id);
-        }
-
-        public override IEnumerable<IdentifiedRegistry> GetItems()
-        {
-            return _database.GetTanks();
-        }
-
-        public override bool TryRemoveItem(IdentifiedRegistry identifiedRegistry, out string message)
-        {
-            message = null;
-
-            var nozzlesUsingTank = _database.GetNozzlesUsingTank(identifiedRegistry.Id);
-            if (nozzlesUsingTank.Any())
-            {
-                var stringBuilder = new StringBuilder();
-                stringBuilder.AppendLine("Não é possível remover o tanque pois os seguintes bicos estão o utilizando:");
-
-                foreach (var nozzle in nozzlesUsingTank)
-                {
-                    stringBuilder.Append("- ");
-                    stringBuilder.AppendLine(nozzle.Name);
-                }
-
-                message = stringBuilder.ToString();
-                return false;
-            }
-
-            _database.RemoveTank(identifiedRegistry.Id);
-            return true;
-        }
-
-        public override void SetSelectedItem(IdentifiedRegistry identifiedRegistry)
+        public override void UpdateViewItem(IdentifiedRegistry identifiedRegistry)
         {
             _tank = identifiedRegistry as Tank;
             UpdateView();
@@ -99,8 +60,6 @@ namespace TestProject.Controller
             _tank.StorageCapacity = _view.StorageCapacity;
             _tank.FuelId = _view.Fuel?.Id;
             _database.SerializeTank(_tank.Id);
-
-            CallModelChanged();
         }
 
         protected sealed override bool ValidateFields(out string message)

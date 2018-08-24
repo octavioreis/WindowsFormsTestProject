@@ -33,19 +33,9 @@ namespace TestProject.View.Views
             lbItems.Items.Clear();
         }
 
-        public IFuelView GetFuelView()
+        public ISaveView GetSaveView()
         {
-            return fuelView1;
-        }
-
-        public ITankView GetTankView()
-        {
-            return tankView1;
-        }
-
-        public INozzleView GetNozzleView()
-        {
-            return nozzleView1;
+            return saveView;
         }
 
         public void RemoveItem(IdentifiedRegistry item)
@@ -63,7 +53,7 @@ namespace TestProject.View.Views
             lbItems.SelectedItem = item;
         }
 
-        public void ShowErrorMessage(string message)
+        public void ShowWarningMessage(string message)
         {
             MessageBox.Show(message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
@@ -88,7 +78,7 @@ namespace TestProject.View.Views
 
         private void lbItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _controller.UpdateRegistryViewInformation(GetSelectedRegistry());
+            _controller.UpdateRegistryViewItem(GetSelectedRegistry());
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -102,7 +92,7 @@ namespace TestProject.View.Views
             if (selectedRegistry == null)
                 return;
 
-            var message = $"Deseja remover o item \"{selectedRegistry.Name}\"";
+            var message = $"Deseja remover o item \"{selectedRegistry.Name}\"?";
             var title = "Atenção";
 
             if (MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)

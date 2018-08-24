@@ -26,34 +26,12 @@ namespace TestProject.Controller
 
         #region AbstractRegistryController Members
 
-        public override IdentifiedRegistry AddItem()
+        public override string GetSaveButtonTooltip()
         {
-            var newNozzle = _database.CreateEmptyNozzle();
-            _database.AddNozzle(newNozzle);
-
-            return newNozzle;
+            return "Salvar alterações no bico (Ctrl+S)";
         }
 
-        public override IdentifiedRegistry GetItem(Guid id)
-        {
-            return _database.GetNozzle(id);
-        }
-
-        public override IEnumerable<IdentifiedRegistry> GetItems()
-        {
-            return _database.GetNozzles();
-        }
-
-        public override bool TryRemoveItem(IdentifiedRegistry identifiedRegistry, out string message)
-        {
-            message = null;
-
-            _database.RemoveNozzle(identifiedRegistry.Id);
-
-            return true;
-        }
-
-        public override void SetSelectedItem(IdentifiedRegistry identifiedRegistry)
+        public override void UpdateViewItem(IdentifiedRegistry identifiedRegistry)
         {
             _nozzle = identifiedRegistry as Nozzle;
             UpdateView();
@@ -83,8 +61,6 @@ namespace TestProject.Controller
             _nozzle.SellingPrice = _view.SellingPrice;
             _nozzle.TankId = _view.Tank.Id;
             _database.SerializeNozzle(_nozzle.Id);
-
-            CallModelChanged();
         }
 
         protected sealed override bool ValidateFields(out string message)

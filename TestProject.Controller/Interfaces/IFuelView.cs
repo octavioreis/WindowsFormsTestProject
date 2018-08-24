@@ -6,7 +6,5 @@ namespace TestProject.Controller.Interfaces
     {
         string FuelName { get; set; }
         FuelType FuelType { get; set; }
-
-        void SetController(FuelController controller);
     }
 }

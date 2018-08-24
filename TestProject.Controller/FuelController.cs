@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using TestProject.Controller.Interfaces;
+﻿using TestProject.Controller.Interfaces;
 using TestProject.Database;
 using TestProject.Model;
 
@@ -24,49 +20,12 @@ namespace TestProject.Controller
 
         #region AbstractRegistryController Members
 
-        public override IdentifiedRegistry AddItem()
+        public override string GetSaveButtonTooltip()
         {
-            var newFuel = _database.CreateEmptyFuel();
-            _database.AddFuel(newFuel);
-
-            return newFuel;
+            return "Salvar alterações no combustível (Ctrl+S)";
         }
 
-        public override IdentifiedRegistry GetItem(Guid id)
-        {
-            return _database.GetFuel(id);
-        }
-
-        public override IEnumerable<IdentifiedRegistry> GetItems()
-        {
-            return _database.GetFuels();
-        }
-
-        public override bool TryRemoveItem(IdentifiedRegistry identifiedRegistry, out string message)
-        {
-            message = null;
-
-            var tanksUsingFuel = _database.GetTanksUsingFuel(identifiedRegistry.Id);
-            if (tanksUsingFuel.Any())
-            {
-                var stringBuilder = new StringBuilder();
-                stringBuilder.AppendLine("Não é possível remover o combustível pois os seguintes tanques estão o utilizando:");
-
-                foreach (var tank in tanksUsingFuel)
-                {
-                    stringBuilder.Append("- ");
-                    stringBuilder.AppendLine(tank.Name);
-                }
-
-                message = stringBuilder.ToString();
-                return false;
-            }
-
-            _database.RemoveFuel(identifiedRegistry.Id);
-            return true;
-        }
-
-        public override void SetSelectedItem(IdentifiedRegistry identifiedRegistry)
+        public override void UpdateViewItem(IdentifiedRegistry identifiedRegistry)
         {
             _fuel = identifiedRegistry as Fuel;
             UpdateView();
@@ -83,8 +42,6 @@ namespace TestProject.Controller
             _fuel.Name = _view.FuelName;
             _fuel.Type = _view.FuelType;
             _database.SerializeFuel(_fuel.Id);
-
-            CallModelChanged();
         }
 
         protected sealed override bool ValidateFields(out string message)
