@@ -64,7 +64,7 @@ namespace TestProject.View.Views
         private void UpdateModel()
         {
             if (!_controller.TryUpdateModel(out string message))
-                MessageBox.Show(message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         private void btnSave_Click(object sender, EventArgs e)

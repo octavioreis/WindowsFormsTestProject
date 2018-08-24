@@ -65,7 +65,7 @@ namespace TestProject.View.Views
 
         public void ShowErrorMessage(string message)
         {
-            MessageBox.Show(message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show(message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         public void UpdateSelectedItem()
