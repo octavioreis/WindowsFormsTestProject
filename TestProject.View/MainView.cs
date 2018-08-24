@@ -1,7 +1,10 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
 using TestProject.Controller;
 using TestProject.Controller.Interfaces;
+using TestProject.Model;
 using TestProject.Model.Enums;
+using TestProject.ReportGenerator;
 
 namespace TestProject.View
 {
@@ -36,13 +39,6 @@ namespace TestProject.View
             return null;
         }
 
-        private void selectedTab_Changed(object sender, System.EventArgs e)
-        {
-            var radioButton = (RadioButton)sender;
-            if (radioButton.Checked)
-                _controller.LoadSelectedTab();
-        }
-
         public void SelectTab(RegistryType type)
         {
             switch (type)
@@ -59,6 +55,24 @@ namespace TestProject.View
                 default:
                     break;
             }
+        }
+
+        public void ShowFuelsReport(IEnumerable<Fuel> fuels)
+        {
+            var reportForm = new FuelReportViewer(fuels);
+            reportForm.ShowDialog();
+        }
+
+        private void selectedTab_Changed(object sender, System.EventArgs e)
+        {
+            var radioButton = (RadioButton)sender;
+            if (radioButton.Checked)
+                _controller.LoadSelectedTab();
+        }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            _controller.ShowFuelReport();
         }
     }
 }

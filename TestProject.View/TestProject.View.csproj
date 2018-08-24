@@ -119,6 +119,14 @@
       <Project>{E5FDEB97-5E6A-4362-B197-553F99FDCC5C}</Project>
       <Name>TestProject.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TestProject.ReportGenerator\TestProject.ReportGenerator.csproj">
+      <Project>{9e5cca9c-4e04-4484-bb85-e798564ae72f}</Project>
+      <Name>TestProject.ReportGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestProject.Translator\TestProject.Globalization.csproj">
+      <Project>{841A36F9-E864-4403-B7B0-7EA09B215A20}</Project>
+      <Name>TestProject.Globalization</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save-icon.png" />

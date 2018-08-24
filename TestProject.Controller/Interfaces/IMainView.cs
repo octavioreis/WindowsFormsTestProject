@@ -1,4 +1,6 @@
-﻿using TestProject.Model.Enums;
+﻿using System.Collections.Generic;
+using TestProject.Model;
+using TestProject.Model.Enums;
 
 namespace TestProject.Controller.Interfaces
 {
@@ -7,6 +9,7 @@ namespace TestProject.Controller.Interfaces
         IItemsView GetItemsView();
         RegistryType? GetSelectedTab();
         void SelectTab(RegistryType type);
+        void ShowFuelsReport(IEnumerable<Fuel> fuels);
 
         void SetController(MainController controller);
     }

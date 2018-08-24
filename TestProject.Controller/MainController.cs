@@ -2,17 +2,21 @@
 using TestProject.Controller.Interfaces;
 using TestProject.Database;
 using TestProject.Model.Enums;
+using TestProject.ReportGenerator;
 
 namespace TestProject.Controller
 {
     public class MainController : INavigator
     {
         private readonly IMainView _view;
+        private readonly IDatabase _database;
         private readonly ItemsController _itemsController;
 
         public MainController(IMainView view, IDatabase database)
         {
-            _view = view ?? throw new ArgumentNullException(nameof(view));
+            _view = view;
+            _database = database;
+
             view.SetController(this);
 
             _itemsController = new ItemsController(view.GetItemsView(), database, this);
@@ -44,6 +48,11 @@ namespace TestProject.Controller
         {
             _view.SelectTab(type);
             _itemsController.SelectItem(id);
+        }
+
+        public void ShowFuelReport()
+        {
+            _view.ShowFuelsReport(_database.GetFuels());
         }
     }
 }

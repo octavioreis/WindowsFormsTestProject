@@ -5,6 +5,7 @@ using TestProject.Controller;
 using TestProject.Controller.Interfaces;
 using TestProject.Controller.ComboBoxOptions;
 using TestProject.Model.Enums;
+using TestProject.Globalization;
 
 namespace TestProject.View.Views
 {
@@ -12,10 +13,10 @@ namespace TestProject.View.Views
     {
         private FuelTypeOption[] _fuelTypes = new FuelTypeOption[]
         {
-            new FuelTypeOption(FuelType.CommonGasoline, "Gasolina Comum"),
-            new FuelTypeOption(FuelType.AdditivatedGasoline, "Gasolina Aditivada"),
-            new FuelTypeOption(FuelType.Etanol, "Etanol"),
-            new FuelTypeOption(FuelType.Diesel, "Diesel")
+            new FuelTypeOption(FuelType.CommonGasoline, Translator.Translate(FuelType.CommonGasoline.ToString())),
+            new FuelTypeOption(FuelType.AdditivatedGasoline, Translator.Translate(FuelType.AdditivatedGasoline.ToString())),
+            new FuelTypeOption(FuelType.Ethanol, Translator.Translate(FuelType.Ethanol.ToString())),
+            new FuelTypeOption(FuelType.Diesel, Translator.Translate(FuelType.Diesel.ToString()))
         };
 
         private FuelController _controller;

@@ -4,7 +4,7 @@
     {
         CommonGasoline,
         AdditivatedGasoline,
-        Etanol,
+        Ethanol,
         Diesel
     }
 }

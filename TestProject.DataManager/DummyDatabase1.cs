@@ -16,7 +16,7 @@ namespace TestProject.Database
                 new Fuel() { Id = Guid.NewGuid(), Name = "Combustível.3", Type = FuelType.AdditivatedGasoline },
                 new Fuel() { Id = Guid.NewGuid(), Name = "Combustível.4", Type = FuelType.AdditivatedGasoline },
                 new Fuel() { Id = Guid.NewGuid(), Name = "Combustível.5", Type = FuelType.CommonGasoline },
-                new Fuel() { Id = Guid.NewGuid(), Name = "Combustível.6", Type = FuelType.Etanol},
+                new Fuel() { Id = Guid.NewGuid(), Name = "Combustível.6", Type = FuelType.Ethanol},
             };
         }
 
