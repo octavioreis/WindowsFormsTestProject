@@ -25,6 +25,10 @@ namespace TestProject.Controller
             view.SetController(this);
 
             _saveController = new SaveController(view.GetSaveView(), database, navigator, ModelChanged);
+
+            _fuelCollectionManager = new FuelCollectionManager(database);
+            _tankCollectionManager = new TankCollectionManager(database);
+            _nozzleCollectionManager = new NozzleCollectionManager(database);
         }
 
         public void AddItem()

@@ -14,8 +14,6 @@ namespace TestProject.Controller
         {
             _view = view;
             _database = database;
-
-            view.SetController(this);
         }
 
         #region AbstractRegistryController Members
