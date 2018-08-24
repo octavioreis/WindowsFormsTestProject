@@ -4,7 +4,7 @@ using TestProject.Controller;
 using TestProject.Controller.Interfaces;
 using TestProject.Model;
 using TestProject.Model.Enums;
-using TestProject.ReportGenerator;
+using TestProject.ReportGenerator.ReportViewers;
 
 namespace TestProject.View
 {

@@ -62,12 +62,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ReportItems\FuelReportItem.cs" />
     <Compile Include="ReportItems\NozzleReportItem.cs" />
     <Compile Include="ReportItems\TankReportItem.cs" />
+    <Compile Include="ReportViewers\FuelReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportViewers\FuelReportViewer.Designer.cs">
+      <DependentUpon>FuelReportViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icon.ico" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -84,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\TestProject.ReportGenerator.ReportItems.FuelReportItem.datasource" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TestProject.Model\TestProject.Model.csproj">
@@ -95,9 +108,16 @@
       <Name>TestProject.Globalization</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="ReportSets\" />
-    <Folder Include="ReportViewers\" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportSets\FuelReport.rdlc" />
+    <EmbeddedResource Include="ReportViewers\FuelReportViewer.resx">
+      <DependentUpon>FuelReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

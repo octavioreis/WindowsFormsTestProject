@@ -34,9 +34,9 @@
             this.rbFuels = new System.Windows.Forms.RadioButton();
             this.rbTanks = new System.Windows.Forms.RadioButton();
             this.rbNozzles = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.itemsView = new TestProject.View.Views.ItemsView();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.tlpMain.SuspendLayout();
             this.tlpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -121,6 +121,16 @@
             this.rbNozzles.UseVisualStyleBackColor = true;
             this.rbNozzles.CheckedChanged += new System.EventHandler(this.selectedTab_Changed);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(351, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "gerar relatorio";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // itemsView
             // 
             this.itemsView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -141,16 +151,6 @@
             this.pbLogo.TabIndex = 2;
             this.pbLogo.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(351, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "gerar relatorio";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,6 +160,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(400, 400);
             this.Name = "MainView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Databoff - Projeto teste";
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();
