@@ -34,7 +34,6 @@
             this.rbFuels = new System.Windows.Forms.RadioButton();
             this.rbTanks = new System.Windows.Forms.RadioButton();
             this.rbNozzles = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
             this.itemsView = new TestProject.View.Views.ItemsView();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.tlpMain.SuspendLayout();
@@ -63,20 +62,19 @@
             // 
             this.tlpMenu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tlpMenu.AutoSize = true;
-            this.tlpMenu.ColumnCount = 4;
+            this.tlpMenu.ColumnCount = 3;
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMenu.Controls.Add(this.rbFuels, 0, 0);
             this.tlpMenu.Controls.Add(this.rbTanks, 1, 0);
             this.tlpMenu.Controls.Add(this.rbNozzles, 2, 0);
-            this.tlpMenu.Controls.Add(this.button1, 3, 0);
-            this.tlpMenu.Location = new System.Drawing.Point(177, 104);
+            this.tlpMenu.Location = new System.Drawing.Point(218, 104);
             this.tlpMenu.Name = "tlpMenu";
             this.tlpMenu.RowCount = 1;
             this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMenu.Size = new System.Drawing.Size(429, 46);
+            this.tlpMenu.Size = new System.Drawing.Size(348, 46);
             this.tlpMenu.TabIndex = 0;
             // 
             // rbFuels
@@ -120,16 +118,6 @@
             this.rbNozzles.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbNozzles.UseVisualStyleBackColor = true;
             this.rbNozzles.CheckedChanged += new System.EventHandler(this.selectedTab_Changed);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(351, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "gerar relatorio";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // itemsView
             // 
@@ -179,6 +167,5 @@
         private System.Windows.Forms.RadioButton rbTanks;
         private System.Windows.Forms.RadioButton rbFuels;
         private System.Windows.Forms.PictureBox pbLogo;
-        private System.Windows.Forms.Button button1;
     }
 }

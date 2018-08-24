@@ -81,10 +81,5 @@ namespace TestProject.View
             if (radioButton.Checked)
                 _controller.LoadSelectedTab();
         }
-
-        private void button1_Click(object sender, System.EventArgs e)
-        {
-            _controller.ShowNozzlesReport();
-        }
     }
 }
