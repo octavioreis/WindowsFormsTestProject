@@ -38,6 +38,7 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.nudSellingPrice = new System.Windows.Forms.NumericUpDown();
+            this.lblReais = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSellingPrice)).BeginInit();
@@ -57,6 +58,7 @@
             this.tlpMain.Controls.Add(this.txtName, 1, 0);
             this.tlpMain.Controls.Add(this.btnSave, 2, 4);
             this.tlpMain.Controls.Add(this.nudSellingPrice, 1, 1);
+            this.tlpMain.Controls.Add(this.lblReais, 2, 1);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
@@ -95,7 +97,7 @@
             this.cbTank.FormattingEnabled = true;
             this.cbTank.Location = new System.Drawing.Point(53, 58);
             this.cbTank.Name = "cbTank";
-            this.cbTank.Size = new System.Drawing.Size(206, 21);
+            this.cbTank.Size = new System.Drawing.Size(172, 21);
             this.cbTank.TabIndex = 2;
             // 
             // btnGoToTank
@@ -104,7 +106,7 @@
             this.btnGoToTank.FlatAppearance.BorderSize = 0;
             this.btnGoToTank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoToTank.Image = global::TestProject.View.Properties.Resources.next;
-            this.btnGoToTank.Location = new System.Drawing.Point(265, 55);
+            this.btnGoToTank.Location = new System.Drawing.Point(231, 55);
             this.btnGoToTank.Name = "btnGoToTank";
             this.btnGoToTank.Size = new System.Drawing.Size(32, 28);
             this.btnGoToTank.TabIndex = 3;
@@ -127,7 +129,7 @@
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.Location = new System.Drawing.Point(53, 3);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(206, 20);
+            this.txtName.Size = new System.Drawing.Size(172, 20);
             this.txtName.TabIndex = 0;
             // 
             // btnSave
@@ -150,8 +152,18 @@
             this.nudSellingPrice.DecimalPlaces = 2;
             this.nudSellingPrice.Location = new System.Drawing.Point(53, 29);
             this.nudSellingPrice.Name = "nudSellingPrice";
-            this.nudSellingPrice.Size = new System.Drawing.Size(206, 20);
+            this.nudSellingPrice.Size = new System.Drawing.Size(172, 20);
             this.nudSellingPrice.TabIndex = 6;
+            // 
+            // lblReais
+            // 
+            this.lblReais.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblReais.AutoSize = true;
+            this.lblReais.Location = new System.Drawing.Point(231, 32);
+            this.lblReais.Name = "lblReais";
+            this.lblReais.Size = new System.Drawing.Size(66, 13);
+            this.lblReais.TabIndex = 7;
+            this.lblReais.Text = "reais por litro";
             // 
             // NozzleView
             // 
@@ -179,5 +191,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.NumericUpDown nudSellingPrice;
+        private System.Windows.Forms.Label lblReais;
     }
 }

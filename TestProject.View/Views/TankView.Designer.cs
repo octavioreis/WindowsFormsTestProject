@@ -39,6 +39,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.nudCapacity = new System.Windows.Forms.NumericUpDown();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.lblLiters = new System.Windows.Forms.Label();
             this.tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCapacity)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +58,7 @@
             this.tlpMain.Controls.Add(this.txtName, 1, 0);
             this.tlpMain.Controls.Add(this.btnSave, 2, 4);
             this.tlpMain.Controls.Add(this.nudCapacity, 1, 1);
+            this.tlpMain.Controls.Add(this.lblLiters, 2, 1);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
@@ -153,6 +155,16 @@
             this.nudCapacity.Size = new System.Drawing.Size(184, 20);
             this.nudCapacity.TabIndex = 6;
             // 
+            // lblLiters
+            // 
+            this.lblLiters.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblLiters.AutoSize = true;
+            this.lblLiters.Location = new System.Drawing.Point(265, 32);
+            this.lblLiters.Name = "lblLiters";
+            this.lblLiters.Size = new System.Drawing.Size(28, 13);
+            this.lblLiters.TabIndex = 7;
+            this.lblLiters.Text = "litros";
+            // 
             // TankView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,5 +191,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.NumericUpDown nudCapacity;
+        private System.Windows.Forms.Label lblLiters;
     }
 }

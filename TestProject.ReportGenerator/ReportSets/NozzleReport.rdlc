@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>5cm</Width>
+              <Width>6.21708cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>5cm</Width>
@@ -25,7 +25,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Preço de venda</Value>
+                              <Value>Preço de venda (reais por litro)</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -96,7 +96,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -290,7 +289,7 @@
         </TablixRowHierarchy>
         <DataSetName>NozzleDataSet</DataSetName>
         <Height>1.2cm</Height>
-        <Width>15cm</Width>
+        <Width>16.21708cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
