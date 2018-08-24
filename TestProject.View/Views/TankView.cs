@@ -60,11 +60,26 @@ namespace TestProject.View.Views
             Visible = visible;
         }
 
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.S))
+            {
+                UpdateModel();
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void UpdateModel()
+        {
+            if (!_controller.TryUpdateModel(out string message))
+                MessageBox.Show(message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string message;
-            if (!_controller.TryUpdateModel(out message))
-                MessageBox.Show(message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            UpdateModel();
         }
 
         private void btnGoToFuel_Click(object sender, EventArgs e)
