@@ -38,7 +38,7 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.nudSellingPrice = new System.Windows.Forms.NumericUpDown();
-            this.tipSaveButton = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSellingPrice)).BeginInit();
             this.SuspendLayout();
@@ -101,11 +101,14 @@
             // btnGoToTank
             // 
             this.btnGoToTank.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnGoToTank.FlatAppearance.BorderSize = 0;
+            this.btnGoToTank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoToTank.Image = global::TestProject.View.Properties.Resources.next;
             this.btnGoToTank.Location = new System.Drawing.Point(265, 55);
             this.btnGoToTank.Name = "btnGoToTank";
             this.btnGoToTank.Size = new System.Drawing.Size(32, 28);
             this.btnGoToTank.TabIndex = 3;
+            this.toolTip.SetToolTip(this.btnGoToTank, "Ir até tanque");
             this.btnGoToTank.UseVisualStyleBackColor = true;
             this.btnGoToTank.Click += new System.EventHandler(this.btnGoToTank_Click);
             // 
@@ -137,7 +140,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(32, 32);
             this.btnSave.TabIndex = 4;
-            this.tipSaveButton.SetToolTip(this.btnSave, "Salvar alterações no bico (Ctrl+S)");
+            this.toolTip.SetToolTip(this.btnSave, "Salvar alterações no bico (Ctrl+S)");
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -174,7 +177,7 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.ToolTip tipSaveButton;
+        private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.NumericUpDown nudSellingPrice;
     }
 }
