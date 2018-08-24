@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using TestProject.Globalization;
+using TestProject.Common;
 using TestProject.Model;
 using TestProject.ReportGenerator.ReportItems;
 

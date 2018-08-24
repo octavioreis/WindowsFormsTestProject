@@ -76,8 +76,8 @@
       <Project>{504B6B0D-9C4A-4C8C-8D86-D9088BD62E13}</Project>
       <Name>TestProject.Controller</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TestProject.DataManager\TestProject.Database.csproj">
-      <Project>{9F59627A-7F53-4E09-8EE8-7B9B84627F38}</Project>
+    <ProjectReference Include="..\TestProject.Database\TestProject.Database.csproj">
+      <Project>{9f59627a-7f53-4e09-8ee8-7b9b84627f38}</Project>
       <Name>TestProject.Database</Name>
     </ProjectReference>
     <ProjectReference Include="..\TestProject.View\TestProject.View.csproj">

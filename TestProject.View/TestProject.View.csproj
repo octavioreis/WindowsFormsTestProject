@@ -120,6 +120,10 @@
     <None Include="Resources\next.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TestProject.Common\TestProject.Common.csproj">
+      <Project>{EA26850C-543C-4DD6-B302-C9D69658454F}</Project>
+      <Name>TestProject.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestProject.Controller\TestProject.Controller.csproj">
       <Project>{504B6B0D-9C4A-4C8C-8D86-D9088BD62E13}</Project>
       <Name>TestProject.Controller</Name>
@@ -131,10 +135,6 @@
     <ProjectReference Include="..\TestProject.ReportGenerator\TestProject.ReportGenerator.csproj">
       <Project>{9e5cca9c-4e04-4484-bb85-e798564ae72f}</Project>
       <Name>TestProject.ReportGenerator</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TestProject.Translator\TestProject.Globalization.csproj">
-      <Project>{841A36F9-E864-4403-B7B0-7EA09B215A20}</Project>
-      <Name>TestProject.Globalization</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

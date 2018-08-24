@@ -113,13 +113,13 @@
     <None Include="Properties\DataSources\TestProject.ReportGenerator.ReportItems.FuelReportItem.datasource" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TestProject.Common\TestProject.Common.csproj">
+      <Project>{EA26850C-543C-4DD6-B302-C9D69658454F}</Project>
+      <Name>TestProject.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestProject.Model\TestProject.Model.csproj">
       <Project>{e5fdeb97-5e6a-4362-b197-553f99fdcc5c}</Project>
       <Name>TestProject.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TestProject.Translator\TestProject.Globalization.csproj">
-      <Project>{841A36F9-E864-4403-B7B0-7EA09B215A20}</Project>
-      <Name>TestProject.Globalization</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

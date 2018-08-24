@@ -63,10 +63,13 @@
     <Compile Include="CollectionManagers\TankCollectionManager.cs" />
     <Compile Include="SaveController.cs" />
     <Compile Include="TankController.cs" />
-    <Compile Include="Validator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestProject.DataManager\TestProject.Database.csproj">
+    <ProjectReference Include="..\TestProject.Common\TestProject.Common.csproj">
+      <Project>{EA26850C-543C-4DD6-B302-C9D69658454F}</Project>
+      <Name>TestProject.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestProject.Database\TestProject.Database.csproj">
       <Project>{9F59627A-7F53-4E09-8EE8-7B9B84627F38}</Project>
       <Name>TestProject.Database</Name>
     </ProjectReference>

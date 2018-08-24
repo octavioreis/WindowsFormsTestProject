@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using System.Windows.Forms;
+using TestProject.Common;
 using TestProject.Controller.ComboBoxOptions;
 using TestProject.Controller.Interfaces;
-using TestProject.Globalization;
 using TestProject.Model.Enums;
 
 namespace TestProject.View.Views

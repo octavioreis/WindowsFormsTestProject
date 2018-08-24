@@ -1,4 +1,4 @@
-﻿namespace TestProject.Controller
+﻿namespace TestProject.Common
 {
     public static class Validator
     {

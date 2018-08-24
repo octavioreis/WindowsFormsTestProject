@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TestProject.Globalization
+namespace TestProject.Common
 {
     public class Translator
     {
