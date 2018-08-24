@@ -71,7 +71,8 @@ namespace TestProject.View
 
         public void ShowNozzlesReport(IEnumerable<Nozzle> nozzles, IEnumerable<Tank> tanks)
         {
-
+            var reportForm = new NozzleReportViewer(nozzles, tanks);
+            reportForm.ShowDialog();
         }
 
         private void selectedTab_Changed(object sender, System.EventArgs e)
@@ -83,7 +84,7 @@ namespace TestProject.View
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            _controller.ShowTanksReport();
+            _controller.ShowNozzlesReport();
         }
     }
 }

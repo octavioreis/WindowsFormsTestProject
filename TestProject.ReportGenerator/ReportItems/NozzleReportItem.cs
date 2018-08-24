@@ -10,7 +10,7 @@
         {
             Name = name;
             SellingPrice = sellingPrice;
-            TankName = tankName;
+            TankName = tankName ?? "Nenhum";
         }
     }
 }

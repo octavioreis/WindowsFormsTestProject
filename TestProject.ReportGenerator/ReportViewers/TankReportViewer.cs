@@ -27,7 +27,7 @@ namespace TestProject.ReportGenerator.ReportViewers
         {
             TankReportItemBindingSource.DataSource = _tankReportItems;
 
-            this.reportViewer1.RefreshReport();
+            this.reportViewer.RefreshReport();
         }
     }
 }
