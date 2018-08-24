@@ -2,7 +2,6 @@
 using TestProject.Controller.Interfaces;
 using TestProject.Database;
 using TestProject.Model.Enums;
-using TestProject.ReportGenerator;
 
 namespace TestProject.Controller
 {
@@ -50,9 +49,19 @@ namespace TestProject.Controller
             _itemsController.SelectItem(id);
         }
 
-        public void ShowFuelReport()
+        public void ShowFuelsReport()
         {
             _view.ShowFuelsReport(_database.GetFuels());
+        }
+
+        public void ShowTanksReport()
+        {
+            _view.ShowTanksReport(_database.GetTanks(), _database.GetFuels());
+        }
+
+        public void ShowNozzlesReport()
+        {
+            _view.ShowNozzlesReport(_database.GetNozzles(), _database.GetTanks());
         }
     }
 }

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TestProject.Model;
-
-namespace TestProject.ReportGenerator.ReportItems
+﻿namespace TestProject.ReportGenerator.ReportItems
 {
     public class NozzleReportItem
     {
@@ -13,11 +6,11 @@ namespace TestProject.ReportGenerator.ReportItems
         public string SellingPrice { get; }
         public string TankName { get; }
 
-        public NozzleReportItem(Nozzle nozzle)
+        public NozzleReportItem(string name, string sellingPrice, string tankName)
         {
-            //Name = nozzle.Name;
-            //SellingPrice = nozzle.SellingPrice.ToString();
-            //Tank = nozzle
+            Name = name;
+            SellingPrice = sellingPrice;
+            TankName = tankName;
         }
     }
 }

@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestProject.Globalization;
 using TestProject.Model;
 using TestProject.ReportGenerator.ReportItems;
 
@@ -20,7 +17,10 @@ namespace TestProject.ReportGenerator.ReportViewers
         {
             InitializeComponent();
 
-            _fuelReportItems = fuels.Select(f => new FuelReportItem(f));
+            _fuelReportItems = fuels.Select(f => new FuelReportItem(
+                f.Name,
+                Translator.Translate(f.Type.ToString())))
+                .ToArray();
         }
 
         private void FuelReportViewer_Load(object sender, EventArgs e)

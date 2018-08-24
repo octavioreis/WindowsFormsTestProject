@@ -76,9 +76,16 @@
     <Compile Include="ReportViewers\FuelReportViewer.Designer.cs">
       <DependentUpon>FuelReportViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportViewers\TankReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportViewers\TankReportViewer.Designer.cs">
+      <DependentUpon>TankReportViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\DataSources\TestProject.ReportGenerator.ReportItems.TankReportItem.datasource" />
     <None Include="Resources\icon.ico" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -115,8 +122,12 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportSets\FuelReport.rdlc" />
+    <EmbeddedResource Include="ReportSets\TankReport.rdlc" />
     <EmbeddedResource Include="ReportViewers\FuelReportViewer.resx">
       <DependentUpon>FuelReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportViewers\TankReportViewer.resx">
+      <DependentUpon>TankReportViewer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

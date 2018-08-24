@@ -63,6 +63,17 @@ namespace TestProject.View
             reportForm.ShowDialog();
         }
 
+        public void ShowTanksReport(IEnumerable<Tank> tanks, IEnumerable<Fuel> fuels)
+        {
+            var reportForm = new TankReportViewer(tanks, fuels);
+            reportForm.ShowDialog();
+        }
+
+        public void ShowNozzlesReport(IEnumerable<Nozzle> nozzles, IEnumerable<Tank> tanks)
+        {
+
+        }
+
         private void selectedTab_Changed(object sender, System.EventArgs e)
         {
             var radioButton = (RadioButton)sender;
@@ -72,7 +83,7 @@ namespace TestProject.View
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            _controller.ShowFuelReport();
+            _controller.ShowTanksReport();
         }
     }
 }
