@@ -12,7 +12,7 @@ namespace TestProject.Controller
     public class ItemsController
     {
         private readonly IItemsView _view;
-        private readonly SaveController _saveController;
+        private readonly RegistryHostController _hostController;
         private readonly FuelCollectionManager _fuelCollectionManager;
         private readonly TankCollectionManager _tankCollectionManager;
         private readonly NozzleCollectionManager _nozzleCollectionManager;
@@ -24,7 +24,7 @@ namespace TestProject.Controller
 
             view.SetController(this);
 
-            _saveController = new SaveController(view.GetSaveView(), database, navigator, ModelChanged);
+            _hostController = new RegistryHostController(view.GetRegistryHostView(), database, navigator, ModelChanged);
 
             _fuelCollectionManager = new FuelCollectionManager(database);
             _tankCollectionManager = new TankCollectionManager(database);
@@ -41,7 +41,7 @@ namespace TestProject.Controller
 
         public void LoadItems(RegistryType registryType)
         {
-            _saveController.SetCurrentController(registryType);
+            _hostController.SetCurrentController(registryType);
             SetCurrentCollectionManager(registryType);
 
             LoadItems(_currentCollectionManager.GetItems());
@@ -62,7 +62,7 @@ namespace TestProject.Controller
 
         public void UpdateRegistryViewItem(IdentifiedRegistry identifiedRegistry)
         {
-            _saveController.UpdateViewItem(identifiedRegistry);
+            _hostController.UpdateViewItem(identifiedRegistry);
         }
 
         private void LoadItems(IEnumerable<IdentifiedRegistry> items)

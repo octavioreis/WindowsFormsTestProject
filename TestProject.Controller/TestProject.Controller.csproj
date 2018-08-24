@@ -50,7 +50,7 @@
     <Compile Include="Interfaces\INavigator.cs" />
     <Compile Include="Interfaces\INozzleView.cs" />
     <Compile Include="Interfaces\IRegistryView.cs" />
-    <Compile Include="Interfaces\ISaveView.cs" />
+    <Compile Include="Interfaces\IRegistryHostView.cs" />
     <Compile Include="Interfaces\ITankView.cs" />
     <Compile Include="ItemsController.cs" />
     <Compile Include="MainController.cs" />
@@ -61,7 +61,7 @@
     <Compile Include="CollectionManagers\FuelCollectionManager.cs" />
     <Compile Include="CollectionManagers\NozzleCollectionManager.cs" />
     <Compile Include="CollectionManagers\TankCollectionManager.cs" />
-    <Compile Include="SaveController.cs" />
+    <Compile Include="RegistryHostController.cs" />
     <Compile Include="TankController.cs" />
   </ItemGroup>
   <ItemGroup>

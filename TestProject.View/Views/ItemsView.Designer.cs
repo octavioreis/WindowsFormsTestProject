@@ -35,7 +35,7 @@
             this.tlpListOptions = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.saveView = new TestProject.View.Views.SaveView();
+            this.registryHostView = new TestProject.View.Views.RegistryHostView();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tlpMain.SuspendLayout();
             this.tlpItemsList.SuspendLayout();
@@ -49,7 +49,7 @@
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.16667F));
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMain.Controls.Add(this.tlpItemsList, 0, 0);
-            this.tlpMain.Controls.Add(this.saveView, 1, 0);
+            this.tlpMain.Controls.Add(this.registryHostView, 1, 0);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
@@ -135,13 +135,13 @@
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // saveView
+            // registryHostView
             // 
-            this.saveView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.saveView.Location = new System.Drawing.Point(163, 3);
-            this.saveView.Name = "saveView";
-            this.saveView.Size = new System.Drawing.Size(432, 332);
-            this.saveView.TabIndex = 4;
+            this.registryHostView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.registryHostView.Location = new System.Drawing.Point(163, 3);
+            this.registryHostView.Name = "registryHostView";
+            this.registryHostView.Size = new System.Drawing.Size(432, 332);
+            this.registryHostView.TabIndex = 4;
             // 
             // ItemsView
             // 
@@ -167,6 +167,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.ToolTip toolTip;
-        private SaveView saveView;
+        private RegistryHostView registryHostView;
     }
 }

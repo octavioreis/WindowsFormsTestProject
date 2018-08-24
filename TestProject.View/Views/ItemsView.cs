@@ -33,9 +33,9 @@ namespace TestProject.View.Views
             lbItems.Items.Clear();
         }
 
-        public ISaveView GetSaveView()
+        public IRegistryHostView GetRegistryHostView()
         {
-            return saveView;
+            return registryHostView;
         }
 
         public void RemoveItem(IdentifiedRegistry item)

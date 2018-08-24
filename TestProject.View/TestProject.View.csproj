@@ -73,11 +73,11 @@
     <Compile Include="Views\NozzleView.Designer.cs">
       <DependentUpon>NozzleView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\SaveView.cs">
+    <Compile Include="Views\RegistryHostView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\SaveView.Designer.cs">
-      <DependentUpon>SaveView.cs</DependentUpon>
+    <Compile Include="Views\RegistryHostView.Designer.cs">
+      <DependentUpon>RegistryHostView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\TankView.cs">
       <SubType>UserControl</SubType>
@@ -93,6 +93,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FuelView.resx">
       <DependentUpon>FuelView.cs</DependentUpon>
@@ -103,8 +104,8 @@
     <EmbeddedResource Include="Views\NozzleView.resx">
       <DependentUpon>NozzleView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\SaveView.resx">
-      <DependentUpon>SaveView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\RegistryHostView.resx">
+      <DependentUpon>RegistryHostView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TankView.resx">
       <DependentUpon>TankView.cs</DependentUpon>

@@ -13,7 +13,7 @@ namespace TestProject.Controller.Interfaces
         void ShowWarningMessage(string message);
         void UpdateSelectedItem();
 
-        ISaveView GetSaveView();
+        IRegistryHostView GetRegistryHostView();
 
         void SetController(ItemsController controller);
     }

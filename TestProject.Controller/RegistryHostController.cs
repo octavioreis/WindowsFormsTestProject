@@ -6,15 +6,15 @@ using TestProject.Model.Enums;
 
 namespace TestProject.Controller
 {
-    public class SaveController
+    public class RegistryHostController
     {
-        private readonly ISaveView _view;
+        private readonly IRegistryHostView _view;
         private readonly FuelController _fuelController;
         private readonly TankController _tankController;
         private readonly NozzleController _nozzleController;
         private AbstractRegistryController _currentController;
 
-        public SaveController(ISaveView view, IDatabase database, INavigator navigator, EventHandler modelChanged)
+        public RegistryHostController(IRegistryHostView view, IDatabase database, INavigator navigator, EventHandler modelChanged)
         {
             _view = view;
 

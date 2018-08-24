@@ -1,6 +1,6 @@
 ﻿namespace TestProject.View.Views
 {
-    partial class SaveView
+    partial class RegistryHostView
     {
         /// <summary> 
         /// Required designer variable.

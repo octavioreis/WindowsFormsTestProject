@@ -4,16 +4,16 @@ using TestProject.Controller.Interfaces;
 
 namespace TestProject.View.Views
 {
-    public partial class SaveView : UserControl, ISaveView
+    public partial class RegistryHostView : UserControl, IRegistryHostView
     {
-        private SaveController _controller;
+        private RegistryHostController _controller;
 
-        public SaveView()
+        public RegistryHostView()
         {
             InitializeComponent();
         }
 
-        #region ISaveView Members
+        #region IRegistryHostView Members
 
         public IFuelView GetFuelView()
         {
@@ -35,7 +35,7 @@ namespace TestProject.View.Views
             toolTip.SetToolTip(btnSave, text);
         }
 
-        public void SetController(SaveController controller)
+        public void SetController(RegistryHostController controller)
         {
             _controller = controller;
         }

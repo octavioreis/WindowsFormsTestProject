@@ -1,6 +1,6 @@
 ﻿namespace TestProject.Controller.Interfaces
 {
-    public interface ISaveView
+    public interface IRegistryHostView
     {
         void SetSaveButtonTooltip(string text);
 
@@ -8,6 +8,6 @@
         ITankView GetTankView();
         INozzleView GetNozzleView();
 
-        void SetController(SaveController controller);
+        void SetController(RegistryHostController controller);
     }
 }
