@@ -31,10 +31,14 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NozzleReportViewer));
-            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.NozzleReportItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.NozzleReportItemBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // NozzleReportItemBindingSource
+            // 
+            this.NozzleReportItemBindingSource.DataSource = typeof(TestProject.ReportGenerator.ReportItems.NozzleReportItem);
             // 
             // reportViewer
             // 
@@ -49,10 +53,6 @@
             this.reportViewer.Size = new System.Drawing.Size(800, 450);
             this.reportViewer.TabIndex = 0;
             // 
-            // NozzleReportItemBindingSource
-            // 
-            this.NozzleReportItemBindingSource.DataSource = typeof(TestProject.ReportGenerator.ReportItems.NozzleReportItem);
-            // 
             // NozzleReportViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -62,7 +62,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NozzleReportViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Databoff - Projeto teste - Relatório dos combustíveis";
+            this.Text = "Databoff - Projeto teste - Relatório dos tanques";
             this.Load += new System.EventHandler(this.NozzleReportViewer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NozzleReportItemBindingSource)).EndInit();
             this.ResumeLayout(false);

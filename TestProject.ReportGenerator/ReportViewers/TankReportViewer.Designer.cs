@@ -62,7 +62,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TankReportViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Databoff - Projeto teste - Relatório dos combustíveis";
+            this.Text = "Databoff - Projeto teste - Relatório dos bicos";
             this.Load += new System.EventHandler(this.TankReportViewer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TankReportItemBindingSource)).EndInit();
             this.ResumeLayout(false);

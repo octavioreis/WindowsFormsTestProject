@@ -17,6 +17,8 @@ namespace TestProject.View
             InitializeComponent();
         }
 
+        #region IMainView Members
+
         public void SetController(MainController controller)
         {
             _controller = controller;
@@ -75,11 +77,33 @@ namespace TestProject.View
             reportForm.ShowDialog();
         }
 
+        #endregion
+
         private void selectedTab_Changed(object sender, System.EventArgs e)
         {
             var radioButton = (RadioButton)sender;
             if (radioButton.Checked)
                 _controller.LoadSelectedTab();
+        }
+
+        private void fuelsToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            _controller.ShowFuelsReport();
+        }
+
+        private void tanksToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            _controller.ShowTanksReport();
+        }
+
+        private void nozzlesToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            _controller.ShowNozzlesReport();
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
